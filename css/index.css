@@ -1,0 +1,13 @@
+.Background{
+    background: url(../resources/main_background.jpg);
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Main_Text{
+    color: #0b1b34;
+    font-family: "Yu Gothic UI Light";
+    text-align: center;
+}
