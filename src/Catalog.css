@@ -1,0 +1,53 @@
+/*?
+=======================================================================
+Catalog container, catalog and link details
+=======================================================================
+This formatting system is used as the traditional logic for tables
+    in HTML is not suitible for constant updates due to the central 
+    unit of organization being rows instead of columns. Therefore the
+    catalog and catalog container system focuses on columns such that
+    categorizing links is made easy.
+@Catalog container - A "table", not a literal HTMl table.
+@Catalog - A column within the "table" that has two elements related
+    to it, the catalog-title and catalog-list.
+@Catalog-title - A label for the category of item being put into the
+    catalog.
+@Catalog-list - A collection of items that make up the catalog, the
+    items inside are links. This class was created to ensure control over the
+    styling of a link inside of the catalog system. It is the 
+    fundamental unit of the catalog.
+*/
+
+
+.Catalog {
+  width: 165px;
+}
+
+.CatalogTitle {
+  background-color: #1C1517;
+  border: 1px solid #ddd;
+  
+  width: 160px;
+  height: 75px;
+  
+  display: flex;
+  justify-content: center; /* Horizontal alignment */
+  align-items: center; /* Vertical alignment */
+    
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+/* This only effects the style of links */
+.CatalogList a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: .3em 0em;
+}
+
+.CatalogList a.emphatic {
+    font-style: italic;
+}
