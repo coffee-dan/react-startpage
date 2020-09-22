@@ -1,0 +1,8 @@
+.CatalogContainer {
+	/*width: 100%;*/
+
+	justify-content: center;
+	margin: 1em 0em;
+	display: flex;
+	flex-direction: row;
+}
