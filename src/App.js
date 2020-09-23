@@ -3,10 +3,13 @@
  */
 
 import React from "react"
+
 import Navbar from "./Navbar"
+import WeatherContainer from "./WeatherContainer"
 import CatalogContainer from "./CatalogContainer"
-import catalogsData from "./catalogsData"
 import TimeWaster from "./TimeWaster"
+
+import catalogsData from "./catalogsData"
 
 function App() {
 	const bodyStyles = {
@@ -21,6 +24,7 @@ function App() {
 		<div>
 			<Navbar />
 			<div style={bodyStyles}>
+				<WeatherContainer />
 				<CatalogContainer catalogs={catalogsData} />
 				<TimeWaster />
 			</div>
