@@ -13,11 +13,11 @@ The navigation bar is meant to only house links that take the user away
 }
 /* Style the links inside the navigation bar */
 .Navbar a {
-    float: left;
-    color: #f2f2f2;
+    text-decoration: none;
+	float: left;
+    color: white;
 	text-align: center;
     padding: 3px 8px;
-    text-decoration: none;
     font-size: 15px;
 }
 /* Change style of links in hover */
@@ -33,7 +33,6 @@ The navigation bar is meant to only house links that take the user away
 }
 /* Centered section inside the navigation bar */
 .NavbarCenter {
-	float: none;
 	position: absolute;
 	top: 50%;
 	left: 50%;

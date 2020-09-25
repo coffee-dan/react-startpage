@@ -1,24 +1,31 @@
 import React from "react"
 import "./WeatherContainer.css"
 
-class WeatherContainer extends React.Component {
-	constructor() {
-		super()
-		this.state = {
-			name: "Fort Worth",
-			description: "overcast clouds",
-			temp: 66,
-			humidity: 93.00
-		}
-	}
+/* Use data passes from App.js which in turn comes from
+ * openweathermap API call.
+ */
 
-	render() {
-		return (
-			<div className="WeatherContainer">
-				{this.state.name} : {this.state.description} , {this.state.temp.toFixed(0)}&deg;F at {this.state.humidity.toFixed(2)}%
-			</div>
-		)
+function WeatherContainer(props) {
+	let weatherText
+
+	if (props.loading) {
+		weatherText = "Loading..."
 	}
+	else {
+		const name = props.data.name
+		const description = props.data.weather[0].description
+		const temp = props.data.main.temp.toFixed(0)
+		const humidity = props.data.main.humidity.toFixed(2) + "%"
+
+		weatherText = name+" : "+description+" , "+temp+" F at "+humidity
+    }
+	
+
+	return (
+		<div className="WeatherContainer">
+			{weatherText}
+		</div>
+	)
 }
 
 export default WeatherContainer

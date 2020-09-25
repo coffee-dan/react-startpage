@@ -1,11 +1,14 @@
 body {
-  font-family: Garamond, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #1C1517;
-  background-image: url(./main_background.png);
-  background-size: cover;
-  height: 100%;
+    font-family: Garamond, serif;
+    color: white;
+    /*
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    */
+    background-color: #1C1517;
+    background-image: url(./main_background.png);
+    background-size: cover;
+    /*align-items: center;*/
 }
 
 code {

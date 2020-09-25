@@ -9,10 +9,10 @@ class TimeWaster extends React.Component {
             count: 0
         }
 
-        this.handleClick = this.handleClick.bind(this)
+        this.increment = this.increment.bind(this)
     }
 
-    handleClick() {
+    increment() {
         this.setState(prevState => {
             return {
                 count: prevState.count + 1
@@ -24,7 +24,7 @@ class TimeWaster extends React.Component {
         return (
             <div className="TimeWasterContainer">
                 <div className="TimeWasterElement">Waste Time &nbsp;</div>
-                <button className="button TimeWasterElement" onClick={this.handleClick}>{this.state.count}</button>
+                <button className="button TimeWasterElement" onClick={this.increment}>{this.state.count}</button>
             </div>
         )
     }

@@ -41,8 +41,8 @@ This formatting system is used as the traditional logic for tables
 
 /* This only effects the style of links */
 .CatalogList a {
-    color: white;
     text-decoration: none;
+    color: white;
     text-align: center;
     display: block;
     margin: .3em 0em;

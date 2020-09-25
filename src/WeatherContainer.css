@@ -1,9 +1,7 @@
 .WeatherContainer {
-    font-family: Garamond, serif;
     width: 400px;
     background-color: #1C1517;
     border: 1px solid #ddd;
     padding: 8px 8px;
-    color: white;
     text-align: center;
 }
