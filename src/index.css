@@ -6,7 +6,7 @@ body {
         -moz-osx-font-smoothing: grayscale;
     */
     background-color: #1C1517;
-    background-image: url(./main_background.png);
+    background-image: url(./img/main_background.png);
     background-size: cover;
     /*align-items: center;*/
 }

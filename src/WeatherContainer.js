@@ -7,7 +7,6 @@ import "./WeatherContainer.css"
 
 function WeatherContainer(props) {
 	let weatherText
-
 	if (props.loading) {
 		weatherText = "Loading..."
 	}

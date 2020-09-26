@@ -8,12 +8,15 @@ import Navbar from "./Navbar"
 import WeatherContainer from "./WeatherContainer"
 import CatalogContainer from "./CatalogContainer"
 import TimeWaster from "./TimeWaster"
+import PokemonDisplay from "./PokemonDisplay"
 
 /* Grabs psuedo json data form catalogsData.js to be sent to 
  * CatalogContainer and further processed as it goes down the 
  * component hierarchy
  */
 import catalogsData from "./catalogsData"
+
+import mailput from "./img/mailput.gif"
 
 /* The use of a .env file to hide the Weather API key is only a 
  * stop gap measure, should not be maintained once past a development
@@ -42,6 +45,9 @@ class App extends React.Component {
 					loading: false
 				})
 			})
+			.catch(error => {
+				console.log('Error fetching and parsing data', error);
+			})
     }
 
 	render() {
@@ -58,7 +64,9 @@ class App extends React.Component {
 				<div className="bodyContainer" style={bodyStyles}>
 					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 					<CatalogContainer catalogs={catalogsData} />
+					<img src={mailput} alt="blame coffee-dan" />
 					<TimeWaster />
+					<PokemonDisplay />
 				</div>
 				
 			</div>
