@@ -15,9 +15,9 @@ function WeatherContainer(props) {
 		const name = props.data.name
 		const description = props.data.weather[0].description
 		const temp = props.data.main.temp.toFixed(0)
-		const humidity = props.data.main.humidity.toFixed(2) + "%"
+		const humidity = props.data.main.humidity.toFixed(2)
 
-		weatherText = name+" : "+description+" , "+temp+" F at "+humidity
+		weatherText = name + " : " + description + " , " + temp + "\u00b0F at " + humidity + "%"
     }
 	
 

@@ -15,6 +15,11 @@ import TimeWaster from "./TimeWaster"
  */
 import catalogsData from "./catalogsData"
 
+/* The use of a .env file to hide the Weather API key is only a 
+ * stop gap measure, should not be maintained once past a development
+ * stage. A backend server should hold onto secrets.
+ */
+
 class App extends React.Component {
 	constructor() {
 		super()
@@ -27,21 +32,19 @@ class App extends React.Component {
 	// When App mounts to DOM fetch weather data from openweathermap API
 	componentDidMount() {
 		// This loading set is not entirely necessary, only here for consistency
-		this.setState({loading: true})
-		fetch("http://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=bb617c8eebae0d1c79c479dd6ad0aab3")
+		this.setState({ loading: true })
+		const APILink = "http://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
+		fetch(APILink)
 			.then(response => response.json())
 			.then(data => {
 				this.setState({
 					weatherData: data,
 					loading: false
 				})
-				console.log(data)
 			})
     }
 
 	render() {
-		const weatherComponent = !this.state.loading ? <WeatherContainer data={this.state.weatherData} /> : "Loading..."
-
 		const bodyStyles = {
 			display: "flex",
 			alignItems: "center",
@@ -53,7 +56,6 @@ class App extends React.Component {
 			<div>
 				<Navbar />
 				<div className="bodyContainer" style={bodyStyles}>
-
 					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 					<CatalogContainer catalogs={catalogsData} />
 					<TimeWaster />
