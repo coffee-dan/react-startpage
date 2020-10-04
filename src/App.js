@@ -4,11 +4,11 @@
 
 import React from "react"
 
-import Navbar from "./Navbar"
-import WeatherContainer from "./WeatherContainer"
-import CatalogContainer from "./CatalogContainer"
-import TimeWaster from "./TimeWaster"
-import PokemonDisplay from "./PokemonDisplay"
+import Navbar from "./components/Navbar"
+import WeatherContainer from "./components/WeatherContainer"
+import CatalogContainer from "./components/CatalogContainer"
+import TimeWaster from "./components/TimeWaster"
+import PokemonDisplay from "./components/PokemonDisplay"
 
 /* Grabs psuedo json data form catalogsData.js to be sent to 
  * CatalogContainer and further processed as it goes down the 
