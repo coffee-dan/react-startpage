@@ -1,33 +1,24 @@
-import React from "react"
+import React, {useState} from "react"
 import './TimeWaster.css'
 
+/**
+ * Rewritten with hooks as practice
+ * as well as thought process that leads me to believe it's more performant
+ */
 
-class TimeWaster extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            count: 0
-        }
+function TimeWaster() {
+    const [count, setCount] = useState(0)
 
-        this.increment = this.increment.bind(this)
+    function increment() {
+        setCount(prevCount => prevCount + 1)
     }
 
-    increment() {
-        this.setState(prevState => {
-            return {
-                count: prevState.count + 1
-            }
-        })
-    }
-
-    render() {
-        return (
-            <div className="TimeWasterContainer">
-                <div className="TimeWasterElement">Waste Time &nbsp;</div>
-                <button className="button TimeWasterElement" onClick={this.increment}>{this.state.count}</button>
-            </div>
-        )
-    }
+    return(
+        <div className="TimeWasterContainer">
+            <div className="TimeWasterElement">Waste Time &nbsp;</div>
+            <button className="button TimeWasterElement" onClick={increment}>{count}</button>
+        </div>
+    )
 }
 
 export default TimeWaster
