@@ -14,7 +14,7 @@ import PokemonDisplay from "./PokemonDisplay"
  * CatalogContainer and further processed as it goes down the 
  * component hierarchy
  */
-import catalogsData from "../catalogsData"
+import catalogsData from "./catalogsData"
 
 import mailput from "../img/mailput.gif"
 

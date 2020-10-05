@@ -1,5 +1,4 @@
 import React from "react"
-import "./WeatherContainer.css"
 
 /*
 hacky implementation of react forms just for fun
@@ -42,7 +41,7 @@ class PokemonDisplay extends React.Component {
 
     render() {
         return (
-            <div className="WeatherContainer">
+            <div className="Container">
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
