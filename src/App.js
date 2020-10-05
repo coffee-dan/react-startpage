@@ -1,77 +1,51 @@
-/* App exists as a sort of table of contents for the webpage
- * thus it should contain each of the main elements of the page
- */
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+} from 'react-router-dom'
 
-import React from "react"
+import Contact from './components/Contact'
+import Home from './components/Home'
 
-import Navbar from "./components/Navbar"
-import WeatherContainer from "./components/WeatherContainer"
-import CatalogContainer from "./components/CatalogContainer"
-import TimeWaster from "./components/TimeWaster"
-import PokemonDisplay from "./components/PokemonDisplay"
+import './components/Navbar.css';
 
-/* Grabs psuedo json data form catalogsData.js to be sent to 
- * CatalogContainer and further processed as it goes down the 
- * component hierarchy
- */
-import catalogsData from "./catalogsData"
+function App() {
+    return (
+        <div>
+            <Router>
+                <nav>
+                    <ul className="Navbar">
+                        <li className="NavbarCenter">
+                            <NavLink
+                                exact to="/"
+                                activeClassName="selected">
+                                Home
+                            </NavLink>
+                        </li>
 
-import mailput from "./img/mailput.gif"
+                        <li>
+                            <NavLink
+                                exact to="/contact"
+                                activeClassName="selected">
+                                Contact
+                            </NavLink>
+                        </li>
+                    </ul>
+                </nav>
 
-/* The use of a .env file to hide the Weather API key is only a 
- * stop gap measure, should not be maintained once past a development
- * stage. A backend server should hold onto secrets.
- */
-
-class App extends React.Component {
-	constructor() {
-		super()
-		this.state = {
-			weatherData: {},
-			loading: true
-        }
-    }
-
-	// When App mounts to DOM fetch weather data from openweathermap API
-	componentDidMount() {
-		// This loading set is not entirely necessary, only here for consistency
-		this.setState({ loading: true })
-		const APILink = "http://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
-		fetch(APILink)
-			.then(response => response.json())
-			.then(data => {
-				this.setState({
-					weatherData: data,
-					loading: false
-				})
-			})
-			.catch(error => {
-				console.log('Error fetching and parsing data', error);
-			})
-    }
-
-	render() {
-		const bodyStyles = {
-			display: "flex",
-			alignItems: "center",
-			flexDirection: "column",
-			justifyContent: "center"
-		}
-
-		return (
-			<div>
-				<Navbar />
-				<div className="bodyContainer" style={bodyStyles}>
-					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
-					<CatalogContainer catalogs={catalogsData} />
-					<img src={mailput} alt="blame coffee-dan" />
-					<TimeWaster />
-					<PokemonDisplay />
-				</div>
-				
-			</div>
-		)
-    }
+                <Switch>
+                    <Route path="/contact">
+                        <Contact />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
+    )
 }
 
 export default App
