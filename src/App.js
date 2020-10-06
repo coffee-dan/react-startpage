@@ -6,7 +6,7 @@ import {
     NavLink
 } from 'react-router-dom'
 
-import Contact from './components/Contact'
+import About from './components/About'
 import Home from './components/Home'
 
 import './components/Navbar.css';
@@ -15,29 +15,48 @@ function App() {
     return (
         <div>
             <Router>
-                <nav>
-                    <ul className="Navbar">
-                        <li className="NavbarCenter">
-                            <NavLink
-                                exact to="/"
-                                activeClassName="selected">
-                                Home
-                            </NavLink>
-                        </li>
+                <nav className="Navbar">
+                    <NavLink
+                        exact to="/"
+                        activeClassName="selected">
+                        Schedule
+                    </NavLink>
+                    <NavLink
+                        exact to="/"
+                        activeClassName="selected">
+                        Reference
+                    </NavLink>
+                    <NavLink
+                        exact to="/"
+                        activeClassName="selected">
+                        Accounting
+                    </NavLink>
 
-                        <li>
-                            <NavLink
-                                exact to="/contact"
-                                activeClassName="selected">
-                                Contact
-                            </NavLink>
-                        </li>
-                    </ul>
+                    <NavLink
+                        className="NavbarCenter"
+                        exact to="/"
+                        activeClassName="selected">
+                        Home
+                    </NavLink>
+
+                    <div className="NavbarRight">
+                        <NavLink
+                            exact to="/"
+                            activeClassName="selected">
+                            Notes
+                        </NavLink>
+                        <NavLink
+                            exact to="/about"
+                            activeClassName="selected">
+                            About
+                        </NavLink>
+                    </div>
+                    
                 </nav>
 
                 <Switch>
-                    <Route path="/contact">
-                        <Contact />
+                    <Route path="/about">
+                        <About />
                     </Route>
                     <Route path="/">
                         <Home />

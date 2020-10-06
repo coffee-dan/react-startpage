@@ -4,7 +4,7 @@
 
 import React from "react"
 
-import Navbar from "./Navbar"
+//import Navbar from "./Navbar"
 import WeatherContainer from "./WeatherContainer"
 import CatalogContainer from "./CatalogContainer"
 import TimeWaster from "./TimeWaster"
@@ -60,7 +60,6 @@ class Home extends React.Component {
 
 		return (
 			<div>
-				<Navbar />
 				<div className="bodyContainer" style={bodyStyles}>
 					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 					<CatalogContainer catalogs={catalogsData} />
