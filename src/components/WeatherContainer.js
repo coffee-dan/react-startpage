@@ -7,7 +7,7 @@ import React from "react"
 function WeatherContainer(props) {
 	let weatherText
 	if (props.loading) {
-		weatherText = "Loading..."
+		weatherText = "Retrieving weather data..."
 	}
 	else {
 		const name = props.data.name

@@ -4,7 +4,6 @@
 
 import React from "react"
 
-//import Navbar from "./Navbar"
 import WeatherContainer from "./WeatherContainer"
 import CatalogContainer from "./CatalogContainer"
 import TimeWaster from "./TimeWaster"
@@ -40,10 +39,14 @@ class Home extends React.Component {
 		fetch(APILink)
 			.then(response => response.json())
 			.then(data => {
-				this.setState({
-					weatherData: data,
-					loading: false
-				})
+
+				if( data.cod === 200 )
+					this.setState({
+						weatherData: data,
+						loading: false
+					})
+				
+				console.log(`${data.cod}: ${data.message}`)
 			})
 			.catch(error => {
 				console.log('Error fetching and parsing data', error);
@@ -55,7 +58,7 @@ class Home extends React.Component {
 			<div className="BodyContainer">
 				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 				<CatalogContainer catalogs={catalogsData} />
-				<img src={mailput} alt="blame coffee-dan" />
+				<img src={mailput} alt="Animated gif of email moving transferring between two computer terminals." />
 				<TimeWaster />
 				<PokemonDisplay />
 			</div>
