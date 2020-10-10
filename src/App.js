@@ -1,77 +1,80 @@
-/* App exists as a sort of table of contents for the webpage
- * thus it should contain each of the main elements of the page
- */
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    NavLink
+} from 'react-router-dom'
 
-import React from "react"
+import Schedule from './components/Schedule'
+import Reference from './components/Reference'
+import Accounting from './components/Accounting'
+import Home from './components/Home'
+import Notes from './components/Notes'
+import About from './components/About'
 
-import Navbar from "./components/Navbar"
-import WeatherContainer from "./components/WeatherContainer"
-import CatalogContainer from "./components/CatalogContainer"
-import TimeWaster from "./components/TimeWaster"
-import PokemonDisplay from "./components/PokemonDisplay"
 
-/* Grabs psuedo json data form catalogsData.js to be sent to 
- * CatalogContainer and further processed as it goes down the 
- * component hierarchy
- */
-import catalogsData from "./catalogsData"
+import './components/Navbar.css';
 
-import mailput from "./img/mailput.gif"
+function App() {
+    return (
+        <div>
+            <Router>
+                <nav className="Navbar">
+                    <NavLink
+                        exact to="/schedule"
+                        activeClassName="selected">
+                        Schedule
+                    </NavLink>
+                    <NavLink
+                        exact to="/reference"
+                        activeClassName="selected">
+                        Reference
+                    </NavLink>
+                    <NavLink
+                        exact to="/accounting"
+                        activeClassName="selected">
+                        Accounting
+                    </NavLink>
 
-/* The use of a .env file to hide the Weather API key is only a 
- * stop gap measure, should not be maintained once past a development
- * stage. A backend server should hold onto secrets.
- */
+                    <NavLink
+                        className="NavbarCenter"
+                        exact to="/"
+                        activeClassName="selected">
+                        Home
+                    </NavLink>
 
-class App extends React.Component {
-	constructor() {
-		super()
-		this.state = {
-			weatherData: {},
-			loading: true
-        }
-    }
+                    <div className="NavbarRight">
+                        <NavLink
+                            exact to="/notes"
+                            activeClassName="selected">
+                            Notes
+                        </NavLink>
+                        <NavLink
+                            exact to="/about"
+                            activeClassName="selected">
+                            About
+                        </NavLink>
+                    </div>
+                    
+                </nav>
 
-	// When App mounts to DOM fetch weather data from openweathermap API
-	componentDidMount() {
-		// This loading set is not entirely necessary, only here for consistency
-		this.setState({ loading: true })
-		const APILink = "http://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
-		fetch(APILink)
-			.then(response => response.json())
-			.then(data => {
-				this.setState({
-					weatherData: data,
-					loading: false
-				})
-			})
-			.catch(error => {
-				console.log('Error fetching and parsing data', error);
-			})
-    }
+                <Switch>                    
+                    <Route exact path="/" component={Home} />
+                    
+                    <Route exact path="/schedule" component={Schedule} />
 
-	render() {
-		const bodyStyles = {
-			display: "flex",
-			alignItems: "center",
-			flexDirection: "column",
-			justifyContent: "center"
-		}
+                    <Route exact path="/reference" component={Reference} />
+                    
+                    <Route exact path="/accounting" component={Accounting} />
 
-		return (
-			<div>
-				<Navbar />
-				<div className="bodyContainer" style={bodyStyles}>
-					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
-					<CatalogContainer catalogs={catalogsData} />
-					<img src={mailput} alt="blame coffee-dan" />
-					<TimeWaster />
-					<PokemonDisplay />
-				</div>
-				
-			</div>
-		)
-    }
+                    <Route exact path="/about" component={About} />
+
+                    <Route exact path="/notes" component={Notes} />
+                </Switch>
+            </Router>
+        </div>
+    )
 }
 
 export default App

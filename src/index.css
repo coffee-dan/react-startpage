@@ -16,3 +16,13 @@ code {
     monospace;
 }
 
+/* Currently used in WeatherContainer.js and PokemonDisplay.js 
+    the styling is able to reach these components without explicit
+    imports for unknown reasons */
+.Container {
+    width: 400px;
+    background-color: #1C1517;
+    border: 1px solid #ddd;
+    padding: 8px 8px;
+    text-align: center;
+}

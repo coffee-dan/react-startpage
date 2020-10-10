@@ -9,7 +9,7 @@ The navigation bar is meant to only house links that take the user away
 .Navbar {
 	position: relative;
     overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: 15px;	
 }
 /* Style the links inside the navigation bar */
 .Navbar a {
@@ -26,7 +26,7 @@ The navigation bar is meant to only house links that take the user away
     color: black;
 }
 /* Change style of the active/current link */
-.Navbar a.Active {
+.selected {
 	/*background-color: #0017CC;*/
     color: white;
 	font-style: italic;
