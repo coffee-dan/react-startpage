@@ -1,5 +1,4 @@
 import React from "react";
-import './CatalogContainer.css';
 import Catalog from './Catalog';
 
 function CatalogContainer(props) {

@@ -18,62 +18,60 @@ import './components/Navbar.css';
 
 function App() {
     return (
-        <div>
-            <Router>
-                <nav className="Navbar">
+        <Router>
+            <nav className="Navbar">
+                <NavLink
+                    exact to="/schedule"
+                    activeClassName="selected">
+                    Schedule
+                </NavLink>
+                <NavLink
+                    exact to="/reference"
+                    activeClassName="selected">
+                    Reference
+                </NavLink>
+                <NavLink
+                    exact to="/accounting"
+                    activeClassName="selected">
+                    Accounting
+                </NavLink>
+
+                <NavLink
+                    className="NavbarCenter"
+                    exact to="/"
+                    activeClassName="selected">
+                    Home
+                </NavLink>
+
+                <div className="NavbarRight">
                     <NavLink
-                        exact to="/schedule"
+                        exact to="/notes"
                         activeClassName="selected">
-                        Schedule
+                        Notes
                     </NavLink>
                     <NavLink
-                        exact to="/reference"
+                        exact to="/about"
                         activeClassName="selected">
-                        Reference
+                        About
                     </NavLink>
-                    <NavLink
-                        exact to="/accounting"
-                        activeClassName="selected">
-                        Accounting
-                    </NavLink>
+                </div>
+                
+            </nav>
 
-                    <NavLink
-                        className="NavbarCenter"
-                        exact to="/"
-                        activeClassName="selected">
-                        Home
-                    </NavLink>
+            <Switch>                    
+                <Route exact path="/" component={Home} />
+                
+                <Route exact path="/schedule" component={Schedule} />
 
-                    <div className="NavbarRight">
-                        <NavLink
-                            exact to="/notes"
-                            activeClassName="selected">
-                            Notes
-                        </NavLink>
-                        <NavLink
-                            exact to="/about"
-                            activeClassName="selected">
-                            About
-                        </NavLink>
-                    </div>
-                    
-                </nav>
+                <Route exact path="/reference" component={Reference} />
+                
+                <Route exact path="/accounting" component={Accounting} />
 
-                <Switch>                    
-                    <Route exact path="/" component={Home} />
-                    
-                    <Route exact path="/schedule" component={Schedule} />
+                <Route exact path="/about" component={About} />
 
-                    <Route exact path="/reference" component={Reference} />
-                    
-                    <Route exact path="/accounting" component={Accounting} />
-
-                    <Route exact path="/about" component={About} />
-
-                    <Route exact path="/notes" component={Notes} />
-                </Switch>
-            </Router>
-        </div>
+                <Route exact path="/notes" component={Notes} />
+            </Switch>
+        </Router>
     )
 }
 

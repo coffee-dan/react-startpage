@@ -51,23 +51,13 @@ class Home extends React.Component {
     }
 
 	render() {
-		const bodyStyles = {
-			display: "flex",
-			alignItems: "center",
-			flexDirection: "column",
-			justifyContent: "center"
-		}
-
 		return (
-			<div>
-				<div className="bodyContainer" style={bodyStyles}>
-					<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
-					<CatalogContainer catalogs={catalogsData} />
-					<img src={mailput} alt="blame coffee-dan" />
-					<TimeWaster />
-					<PokemonDisplay />
-				</div>
-				
+			<div className="BodyContainer">
+				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
+				<CatalogContainer catalogs={catalogsData} />
+				<img src={mailput} alt="blame coffee-dan" />
+				<TimeWaster />
+				<PokemonDisplay />
 			</div>
 		)
     }

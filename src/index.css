@@ -16,6 +16,13 @@ code {
     monospace;
 }
 
+.BodyContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Currently used in WeatherContainer.js and PokemonDisplay.js 
     the styling is able to reach these components without explicit
     imports for unknown reasons */
@@ -25,4 +32,12 @@ code {
     border: 1px solid #ddd;
     padding: 8px 8px;
     text-align: center;
+}
+
+.CatalogContainer {
+	justify-content: center;
+	margin: 1em 0em;
+
+	display: flex;
+	flex-direction: row;
 }
