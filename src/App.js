@@ -19,7 +19,7 @@ import './components/Navbar.css';
 function App() {
     return (
         <Router>
-            <nav className="Navbar">
+            <nav className="navbar">
                 <NavLink
                     exact to="/schedule"
                     activeClassName="selected">
@@ -37,13 +37,13 @@ function App() {
                 </NavLink>
 
                 <NavLink
-                    className="NavbarCenter"
+                    className="navbar--center"
                     exact to="/"
                     activeClassName="selected">
                     Home
                 </NavLink>
 
-                <div className="NavbarRight">
+                <div className="navbar--right">
                     <NavLink
                         exact to="/notes"
                         activeClassName="selected">

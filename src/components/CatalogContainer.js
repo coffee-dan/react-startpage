@@ -7,7 +7,7 @@ function CatalogContainer(props) {
 	)
 
 	return (
-		<div className="CatalogContainer">
+		<div className="catalog--container">
 			{catalogComponents}
 		</div>
 	);

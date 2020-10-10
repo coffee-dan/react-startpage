@@ -3,8 +3,8 @@ import './Catalog.css';
 
 function Catalog(props) {
     return (
-        <div className="Catalog">
-            <div className="CatalogTitle">{props.contents.title}</div>
+        <div className="catalog">
+            <div className="catalog--title">{props.contents.title}</div>
             <CatalogList itemList={props.contents.catalog}/>
         </div>
     );
@@ -16,7 +16,7 @@ function CatalogList(props) {
     )
 
     return (
-        <div className="CatalogList">
+        <div className="catalog--list">
             {catalogComponents}
         </div>
     );

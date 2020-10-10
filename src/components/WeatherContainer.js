@@ -20,7 +20,7 @@ function WeatherContainer(props) {
 	
 
 	return (
-		<div className="Container">
+		<div className="container">
 			{weatherText}
 		</div>
 	)

@@ -8,22 +8,22 @@ This formatting system is used as the traditional logic for tables
     catalog and catalog container system focuses on columns such that
     categorizing links is made easy.
 @Catalog container - A "table", not a literal HTMl table.
-@Catalog - A column within the "table" that has two elements related
+@catalog - A column within the "table" that has two elements related
     to it, the catalog-title and catalog-list.
-@Catalog-title - A label for the category of item being put into the
+@catalog--title - A label for the category of item being put into the
     catalog.
-@Catalog-list - A collection of items that make up the catalog, the
+@catalog--list - A collection of items that make up the catalog, the
     items inside are links. This class was created to ensure control over the
     styling of a link inside of the catalog system. It is the 
     fundamental unit of the catalog.
 */
 
 
-.Catalog {
+.catalog {
   width: 165px;
 }
 
-.CatalogTitle {
+.catalog--title {
   background-color: #1C1517;
   border: 1px solid #ddd;
   
@@ -40,7 +40,7 @@ This formatting system is used as the traditional logic for tables
 }
 
 /* This only effects the style of links */
-.CatalogList a {
+.catalog--list a {
     text-decoration: none;
     color: white;
     text-align: center;
@@ -48,6 +48,6 @@ This formatting system is used as the traditional logic for tables
     margin: .3em 0em;
 }
 
-.CatalogList a.emphatic {
+.catalog--list a.emphatic {
     font-style: italic;
 }

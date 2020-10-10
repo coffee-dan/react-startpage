@@ -41,7 +41,7 @@ class PokemonDisplay extends React.Component {
 
     render() {
         return (
-            <div className="Container">
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"

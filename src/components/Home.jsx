@@ -55,7 +55,7 @@ class Home extends React.Component {
 
 	render() {
 		return (
-			<div className="BodyContainer">
+			<div className="body-container">
 				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 				<CatalogContainer catalogs={catalogsData} />
 				<img src={mailput} alt="Animated gif of email moving transferring between two computer terminals." />

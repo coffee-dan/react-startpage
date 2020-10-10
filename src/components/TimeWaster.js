@@ -14,9 +14,9 @@ function TimeWaster() {
     }
 
     return(
-        <div className="TimeWasterContainer">
-            <div className="TimeWasterElement">Waste Time &nbsp;</div>
-            <button className="button TimeWasterElement" onClick={increment}>{count}</button>
+        <div className="time-waster">
+            <div className="time-waster--element">Waste Time &nbsp;</div>
+            <button className="button time-waster--element" onClick={increment}>{count}</button>
         </div>
     )
 }
