@@ -1,18 +1,18 @@
 # react-startpage
-React.js based implementation of a startpage.
+React.js based implementation of a startpage. <br />
+Possibly running [here](https://react-startpage.herokuapp.com/)
 
 ## Instructions to install React enviroment on Windows
 
 1. [Download and install most recent LTS version of Node.js](https://nodejs.org/en/download/)
 * The Node.js installer includes the NPM package manager. NPM is needed to complete the rest of the steps in Powershell.
 
-2. Verify install using ```npm -v```
+2. `npm -v` verify npm install. And cross referrence with version in package.json
 
-3. Install create-react-app using ```npm install -g create-react-app```
-
-4. Create a react app npx ```create-react-app my-app```
+3. `npx create-react-app react-startpage` install and use create-react-app 
 * Unfortunately this will create a new directory so you will need to move your git repository to this new folder
 
+4. `npm install` install dependencies locally
 
 ### Links to more detailed instructions
 [Installing NPM](https://phoenixnap.com/kb/install-node-js-npm-on-windows)
@@ -21,16 +21,35 @@ React.js based implementation of a startpage.
 
 [Setting up local React.js development enviroment](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment)
 
-## This project uses these tools frequently
+## This project uses these tools
 [Open Weather API](https://home.openweathermap.org/)
-
-## Stuff that was created when the project was bootstrapped using create-react-app
+    A simple free weather API that requires an account for a key.
+[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+    An npm package runner that replaces the need for global installs and is the preferred tool for this project.
+[Node JS](https://nodejs.org/en/)
+    An asynchronous event-driven JavaScript runtime built with scalable network applications as the goal.
+[npm](https://www.npmjs.com/)
+    Package manager that will be handling nearly all installing using CLI.
+[Heroku](https://heroku.com)
+    Free service that hosts the most recent build of the app for the time being.
+[react-router-dom](https://github.com/ReactTraining/react-router#react-router--)
+    DOM bindings for React Router which is at its core a tool to serve up different content at different URLs.
+[Express.js](http://expressjs.com/)
+    A Node.js web application framework that provides a useful set of features for easily serving up the app.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
+
+Runs the most recent app build. See `npm run build` for build instructions. <br />
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
+This uses a thin Express wrapper which is not present in the dev toolchain. <br />
+Currently no support for secret information so any features that require API keys are non-functioning.
+
+### `npm dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
