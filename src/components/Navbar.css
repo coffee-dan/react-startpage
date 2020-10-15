@@ -18,7 +18,8 @@ The navigation bar is meant to only house links that take the user away
     color: white;
 	text-align: center;
     padding: 3px 8px;
-    font-size: 15px;
+	/* font-size: 15px; */
+	font-size: 1.5rem;
 }
 /* Change style of links in hover */
 .navbar a:hover {

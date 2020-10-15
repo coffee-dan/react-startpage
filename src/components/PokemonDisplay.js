@@ -61,7 +61,7 @@ class PokemonDisplay extends React.Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-                <a href={"http://pokemondb.net/pokedex/" + this.state.pokemonName}>
+                <a href={"https://pokemondb.net/pokedex/" + this.state.pokemonName}>
                     <img src={this.state.pokemonURL} alt={this.state.pokemonName} />
                 </a>
             </div>

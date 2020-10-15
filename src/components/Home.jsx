@@ -35,7 +35,7 @@ class Home extends React.Component {
 	componentDidMount() {
 		// This loading set is not entirely necessary, only here for consistency
 		this.setState({ loading: true })
-		const APILink = "http://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
+		const APILink = "https://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
 		fetch(APILink)
 			.then(response => response.json())
 			.then(data => {

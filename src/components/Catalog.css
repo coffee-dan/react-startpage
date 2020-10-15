@@ -34,7 +34,8 @@ This formatting system is used as the traditional logic for tables
   justify-content: center; /* Horizontal alignment */
   align-items: center; /* Vertical alignment */
     
-  font-size: 25px;
+  /* font-size: 25px; */
+  font-size: 2.5rem;
   font-weight: 600;
   color: white;
 }
@@ -45,7 +46,8 @@ This formatting system is used as the traditional logic for tables
     color: white;
     text-align: center;
     display: block;
-    margin: .3em 0em;
+    margin: .3em 0;
+    font-size: 1.6rem;
 }
 
 .catalog--list a.emphatic {
