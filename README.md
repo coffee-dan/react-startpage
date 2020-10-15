@@ -22,20 +22,20 @@ Possibly running [here](https://react-startpage.herokuapp.com/)
 [Setting up local React.js development enviroment](https://reactjs.org/tutorial/tutorial.html#setup-option-2-local-development-environment)
 
 ## This project uses these tools
-[Open Weather API](https://home.openweathermap.org/)
-    A simple free weather API that requires an account for a key.
+[Open Weather API](https://home.openweathermap.org/) - 
+    A simple free weather API that requires an account for a key. <br />
 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
-    An npm package runner that replaces the need for global installs and is the preferred tool for this project.
-[Node JS](https://nodejs.org/en/)
-    An asynchronous event-driven JavaScript runtime built with scalable network applications as the goal.
-[npm](https://www.npmjs.com/)
-    Package manager that will be handling nearly all installing using CLI.
-[Heroku](https://heroku.com)
-    Free service that hosts the most recent build of the app for the time being.
-[react-router-dom](https://github.com/ReactTraining/react-router#react-router--)
-    DOM bindings for React Router which is at its core a tool to serve up different content at different URLs.
-[Express.js](http://expressjs.com/)
-    A Node.js web application framework that provides a useful set of features for easily serving up the app.
+    An npm package runner that replaces the need for global installs and is the preferred tool for this project. <br />
+[Node JS](https://nodejs.org/en/) - 
+    An asynchronous event-driven JavaScript runtime built with scalable network applications as the goal. <br />
+[npm](https://www.npmjs.com/) - 
+    Package manager that will be handling nearly all installing using CLI. <br />
+[Heroku](https://heroku.com) - 
+    Free service that hosts the most recent build of the app for the time being. <br />
+[react-router-dom](https://github.com/ReactTraining/react-router#react-router--) - 
+    DOM bindings for React Router which is at its core a tool to serve up different content at different URLs. <br />
+[Express.js](http://expressjs.com/) - 
+    A Node.js web application framework that provides a useful set of features for easily serving up the app. <br />
 
 ## Available Scripts
 
