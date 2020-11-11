@@ -5,13 +5,7 @@ import {
     Route,
     NavLink
 } from 'react-router-dom'
-
-import Schedule from './components/Schedule'
-import Reference from './components/Reference'
-import Accounting from './components/Accounting'
-import Home from './components/Home'
-import Notes from './components/Notes'
-import About from './components/About'
+import { Schedule, Reference, Accounting, Home, Notes, About } from './pages'
 
 
 import './components/Navbar.css';

@@ -4,16 +4,13 @@
 
 import React from "react"
 
-import WeatherContainer from "./WeatherContainer"
-import CatalogContainer from "./CatalogContainer"
-import TimeWaster from "./TimeWaster"
-import PokemonDisplay from "./PokemonDisplay"
+import { WeatherContainer, CatalogContainer } from '../components'
 
-/* Grabs psuedo json data form catalogsData.js to be sent to 
+/* Grabs json data form catalogsData.json to be sent to 
  * CatalogContainer and further processed as it goes down the 
  * component hierarchy
  */
-import catalogsData from "./catalogsData"
+import catalogsData from '../static/catalogsData.json'
 
 import mailput from "../img/mailput.gif"
 
@@ -59,8 +56,6 @@ class Home extends React.Component {
 				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
 				<CatalogContainer catalogs={catalogsData} />
 				<img src={mailput} alt="Animated gif of email moving transferring between two computer terminals." />
-				<TimeWaster />
-				<PokemonDisplay />
 			</div>
 		)
     }
