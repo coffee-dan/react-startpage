@@ -1,0 +1,555 @@
+{
+    "home": {
+        "personal": {
+            "id": 1,
+            "title": "Personal",
+            "catalog": [
+                {
+                    "id": 1,
+                    "url": "https://html-cleaner.com/",
+                    "name": "HTML Cleaner"
+                },
+                {
+                    "id": 2,
+                    "url": "https://neocities.org/",
+                    "name": "Neocities"
+                },
+                {
+                    "id": 3,
+                    "url": "https://www.neverendingchartrendering.org/",
+                    "name": "Topsters 2"
+                },
+                {
+                    "id": 4,
+                    "url": "http://radio.garden",
+                    "name": "Radio Garden"
+                },
+                {
+                    "id": 5,
+                    "url": "portal.html",
+                    "name": "Testing Portal"
+                },
+                {
+                    "id": 6,
+                    "url": "http://rbt.asia/mu/",
+                    "name": "Music Archive"
+                },
+                {
+                    "id": 7,
+                    "url": "https://www.ubisoft.com/en-us/",
+                    "name": "Ubisoft"
+                },
+                {
+                    "id": 8,
+                    "url": "http://127.0.0.1:32400/web/index.html#",
+                    "name": "Plex"
+                },
+                {
+                    "id": 9,
+                    "url": "https://coffee-dan.github.io/startpage/",
+                    "name": "Portal"
+                }
+            ]
+        },
+        "general": {
+            "id": 2,
+            "title": "General",
+            "catalog": [
+                {
+                    "id": 1,
+                    "url": "https://mail.yahoo.com/",
+                    "name": "Yahoo Inbox"
+                },
+                {
+                    "id": 2,
+                    "url": "https://mail.protonmail.com/login",
+                    "name": "ProtonMail Inbox"
+                },
+                {
+                    "id": 3,
+                    "url": "https://gen.xyz/account/clientarea.php",
+                    "name": "My Account | .xyz"
+                },
+                {
+                    "id": 4,
+                    "url": "https://www.w3schools.com/jsref/default.asp",
+                    "name": "JS W3Schools"
+                },
+                {
+                    "id": 5,
+                    "url": "https://linux.die.net/man/1/bash",
+                    "name": "BASH Manpage"
+                },
+                {
+                    "id": 6,
+                    "url": "https://github.com/",
+                    "name": "GitHub"
+                },
+                {
+                    "id": 7,
+                    "url": "https://www.overleaf.com/dash",
+                    "name": "Overleaf"
+                },
+                {
+                    "id": 8,
+                    "url": "https://trello.com/",
+                    "name": "Trello"
+                },
+                {
+                    "id": 9,
+                    "url": "https://translate.google.com/#view=home&op=translate&sl=en&tl=es",
+                    "name": "Translate to Spanish"
+                },
+                {
+                    "id": 10,
+                    "url": "unsorted.html",
+                    "name": "Unsorted"
+                }
+            ]
+        },
+        "academic": {
+            "id": 3,
+            "title": "Academic",
+            "catalog": [
+                {
+                    "id": 1,
+                    "url": "https://outlook.office365.com/owa/?realm=mavs.uta.edu",
+                    "name": "University Inbox"
+                },
+                {
+                    "id": 2,
+                    "url": "https://uta.instructure.com/",
+                    "name": "Canvas"
+                },
+                {
+                    "id": 3,
+                    "url": "https://www.uta.edu/mymav/",
+                    "name": "My Mav"
+                },
+                {
+                    "id": 4,
+                    "url": "https://www.uta.edu/engineering/_downloads/degree_plans/2019-cs-f.pdf",
+                    "name": "Degree Plan"
+                },
+                {
+                    "id": 5,
+                    "url": "https://student.desmos.com/",
+                    "name": "Desmos"
+                },
+                {
+                    "id": 6,
+                    "url": "http://brezeale.com/CSE3313/ ",
+                    "name": "Signal Processing"
+                },
+                {
+                    "id": 7,
+                    "url": "https://www.uta.edu/commencement/",
+                    "name": "Commencement UTA"
+                }
+            ]
+        }
+	},
+	"reference": {
+		"art": {
+			"id": 1,
+			"title": "Art",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "https://arthistoryproject.com/artists/gustave-dore/the-inferno-canto-21/",
+					"name": "Doré - The Inferno"
+				},
+				{
+					"id": 2,
+					"url": "http://www.gutenberg.org/files/8710/8710-h/8710-h.htm",
+					"name": "Doré - Bible Illustrations"
+				},
+				{
+					"id": 3,
+					"url": "https://www.brainpickings.org/2015/08/05/gustav-dore-poe-the-raven/",
+					"name": "Doré's - 'The Raven'"
+				},
+				{
+					"id": 4,
+					"url": "https://art.vniz.net/en/beksinski/16index.html",
+					"name": "Beksinki"
+				},
+				{
+					"id": 5,
+					"url": "http://www.outlookmaps.com/shop/texas-topographic-map",
+					"name": "Topographic Maps"
+				},
+				{
+					"id": 6,
+					"url": "https://standardebooks.org/",
+					"name": "Standard Ebooks"
+				},
+				{
+					"id": 7,
+					"url": "https://www.thingiverse.com/thing:1730453",
+					"name": "Coin Sorter and Counter"
+				},
+				{
+					"id": 8,
+					"url": "https://open.spotify.com/album/0JLN7JryQ2T7lBEYIrSQF1",
+					"name": "Path 3 - Max Richter"
+				},
+				{
+					"id": 9,
+					"url": "https://arth1700.wordpress.com/",
+					"name": "World Art II: Since 1200"
+				},
+				{
+					"id": 10,
+					"url": "https://archive.org/details/PIRATESOFSILICONVALLEY",
+					"name": "Pirates of Silicon Valley"
+				}
+			]
+		},
+		"resources": {
+			"id": 2,
+			"title": "Resources",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "https://wiki.installgentoo.com/index.php/",
+					"name": "InstallGentoo Wiki"
+				},
+				{
+					"id": 2,
+					"url": "https://pokemondb.net/sprites",
+					"name": "Pokemon Sprites"
+				},
+				{
+					"id": 3,
+					"url": "http://steam.tools/backgrounds/#/",
+					"name": "Steam Backgrounds"
+				},
+				{
+					"id": 4,
+					"url": "https://drive.google.com/drive/folders/0B8ywa01FmhL4V3lkOFd0ZG9Genc",
+					"name": "WorldTracker Library"
+				},
+				{
+					"id": 5,
+					"url": "https://pastebin.com/7Syxr4rZ",
+					"name": "/mu/ Pastebin 1"
+				},
+				{
+					"id": 6,
+					"url": "https://pastebin.com/K9kFJPT6",
+					"name": "/mu/ Pastebin 2"
+				},
+				{
+					"id": 7,
+					"url": "https://www.dafont.com/",
+					"name": "Fonts"
+				},
+				{
+					"id": 8,
+					"url": "https://www.flaticon.com/",
+					"name": "Icons"
+				},
+				{
+					"id": 9,
+					"url": "https://ptable.com/",
+					"name": "Periodic Table"
+				},
+				{
+					"id": 10,
+					"url": "https://weboas.is/",
+					"name": "Web Oasis"
+				},
+				{
+					"id": 11,
+					"url": "https://www.worldobesitydata.org/map/overview-adults",
+					"name": "Global Obesity Observations"
+				},
+				{
+					"id": 12,
+					"url": "http://gen.lib.rus.ec/",
+					"name": "Library Genesis"
+				},
+				{
+					"id": 13,
+					"url": "https://github.com/toddmotto/public-apis",
+					"name": "Public APIs"
+				},
+				{
+					"id": 14,
+					"url": "https://shibe.online/",
+					"name": "the shiba inu api"
+				}
+			]
+		},
+		"tools": {
+			"id": 3,
+			"title": "Tools",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "https://ezgif.com",
+					"name": "GIF Editor"
+				},
+				{
+					"id": 2,
+					"url": "https://online-audio-converter.com",
+					"name": "Audio Converter"
+				},
+				{
+					"id": 3,
+					"url": "https://color.adobe.com",
+					"name": "Color Swatches"
+				},
+				{
+					"id": 4,
+					"url": "http://www.throwawaymail.com",
+					"name": "Temporary Email"
+				},
+				{
+					"id": 5,
+					"url": "https://valkyrie.comodo.com",
+					"name": "Security File Scan"
+				},
+				{
+					"id": 6,
+					"url": "https://pudding.cool/2017/03/timeless/index.html",
+					"name": "Music Graphs"
+				},
+				{
+					"id": 7,
+					"url": "http://www.sigfigscalculator.com/",
+					"name": "Significant Figures"
+				},
+				{
+					"id": 8,
+					"url": "http://www.gingersoftware.com/grammarcheck",
+					"name": "Grammar Check"
+				},
+				{
+					"id": 9,
+					"url": "https://typing-speed-test.aoeu.eu/",
+					"name": "Typing Speed Test"
+				},
+				{
+					"id": 10,
+					"url": "https://www.fx-exchange.com/cad/usd-1-exchange-rates.html",
+					"name": "CAD to USD"
+				},
+				{
+					"id": 11,
+					"url": "https://www.binaryhexconverter.com/hex-to-decimal-converter",
+					"name": "HEX to Decimal"
+				},
+				{
+					"id": 12,
+					"url": "https://icolorpalette.com/color-palette-from-images/",
+					"name": "Palette from Images"
+				},
+				{
+					"id": 13,
+					"url": "https://hide.me/en/proxy",
+					"name": "Web Proxy"
+				},
+				{
+					"id": 14,
+					"url": "https://anydice.com/",
+					"name": "Programable Dice"
+				},
+				{
+					"id": 15,
+					"url": "https://www.tablesgenerator.com/",
+					"name": "Tables Generator"
+				},
+				{
+					"id": 16,
+					"url": "https://getavataaars.com/",
+					"name": "Avataaars"
+				}
+			]
+		},
+		"information": {
+			"id": 4,
+			"title": "Information",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "http://ascii-table.com/",
+					"name": "ASCII Table"
+				},
+				{
+					"id": 2,
+					"url": "http://www.javascripter.net/faq/colornam.htm",
+					"name": "Color Names"
+				},
+				{
+					"id": 3,
+					"url": "https://www.howtogeek.com/114518/47-keyboard-shortcuts-that-work-in-all-web-browsers/",
+					"name": "Browser Shortcuts"
+				},
+				{
+					"id": 4,
+					"url": "https://plato.stanford.edu/entries/lambda-calculus/",
+					"name": "Lambda Calculus"
+				},
+				{
+					"id": 5,
+					"url": "https://www.programiz.com/c-programming/",
+					"name": "C Reference"
+				},
+				{
+					"id": 6,
+					"url": "http://tizag.com/cssT/",
+					"name": "CSS Reference"
+				},
+				{
+					"id": 7,
+					"url": "https://www.rapidtables.com/math/symbols/Set_Symbols.html",
+					"name": "Set Symbols"
+				},
+				{
+					"id": 8,
+					"url": "https://www.rapidtables.com/math/symbols/Logic_Symbols.html",
+					"name": "Logic Symbols"
+				},
+				{
+					"id": 9,
+					"url": "https://www.crummy.com/software/BeautifulSoup/bs4/doc/",
+					"name": "Beautiful Soup 4.4.0"
+				},
+				{
+					"id": 10,
+					"url": "https://www.quora.com/Is-You-Dont-Know-JavaScript-a-good-series-to-learn-with",
+					"name": "You Dont Know JS"
+				},
+				{
+					"id": 11,
+					"url": "https://minecraft.gamepedia.com/Minecraft_Wiki",
+					"name": "Minecraft Wiki"
+				},
+				{
+					"id": 12,
+					"url": "https://www.pygame.org/docs/",
+					"name": "PyGame Docs"
+				},
+				{
+					"id": 13,
+					"url": "https://docs.python.org/3/",
+					"name": "Python3 Docs"
+				},
+				{
+					"id": 14,
+					"url": "https://www.dineoncampus.com/utarlington/",
+					"name": "Dining On Campus"
+				}
+			]
+		},
+		"nix": {
+			"id": 5,
+			"title": "*nix",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "ttps://www.cyberciti.biz/faq/",
+					"name": "nixCraft"
+				},
+				{
+					"id": 2,
+					"url": "https://vim.rtorr.com/",
+					"name": "English VIM Reference"
+				},
+				{
+					"id": 3,
+					"url": "https://ss64.com/bash/",
+					"name": "Bash Commands"
+				},
+				{
+					"id": 4,
+					"url": "https://www.cyberciti.biz/faq/",
+					"name": "Linux FAQ"
+				},
+				{
+					"id": 5,
+					"url": "http://www.linfo.org/create_shell_1.html",
+					"name": "Shell Scripts"
+				},
+				{
+					"id": 6,
+					"url": "https://askubuntu.com/questions/145618/how-can-i-shorten-my-command-line-bash-prompt",
+					"name": "Shorten Bash prompt"
+				},
+				{
+					"id": 7,
+					"url": "https://www.networkworld.com/article/3269587/linux/customizing-your-text-colors-on-the-linux-command-line.html",
+					"name": "Custom Bash text colors"
+				},
+				{
+					"id": 8,
+					"url": "https://unix.stackexchange.com/questions/129143/what-is-the-purpose-of-bashrc-and-how-does-it-work",
+					"name": ".bashrc function and use"
+				},
+				{
+					"id": 9,
+					"url": "https://unix.stackexchange.com/questions/148/colorizing-your-terminal-and-shell-environment",
+					"name":  "Colorizing shell env"
+				},
+				{
+					"id": 10,
+					"url": "https://retropie.org.uk/",
+					"name": "RetroPie"
+				},
+				{
+					"id": 11,
+					"url": "https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/ap-doslinux.html",
+					"name": "DOS BASH Comparison"
+				}
+			]
+		},
+		"sources": {
+			"id": 6,
+			"title": "Sources",
+			"catalog": [
+				{
+					"id": 1,
+					"url": "articles.html",
+					"name": "Specific Articles"
+				},
+				{
+					"id": 2,
+					"url": "https://www.theatlantic.com/",
+					"name": "The Atlantic"
+				},
+				{
+					"id": 3,
+					"url": "https://www.theparisreview.org/",
+					"name": "The Paris Review"
+				},
+				{
+					"id": 4,
+					"url": "https://www.reuters.com/news/technology",
+					"name": "Reuters Tech"
+				},
+				{
+					"id": 5,
+					"url": "https://americacomesalive.com/",
+					"name": "America Comes Alive"
+				},
+				{
+					"id": 6,
+					"url": "https://slashdot.org/",
+					"name": "SlashDot"
+				},
+				{
+					"id": 7,
+					"url": "https://newsapi.org/",
+					"name": "NewsAPI"
+				},
+				{
+					"id": 8,
+					"url": "https://www.non-compete.com/",
+					"name": "Non-compete"
+				}
+			]
+		}
+	}
+}

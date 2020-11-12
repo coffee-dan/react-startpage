@@ -3,15 +3,13 @@
  */
 
 import React from "react"
-
 import { WeatherContainer, CatalogContainer } from '../components'
 
-/* Grabs json data form catalogsData.json to be sent to 
+/* Grabs json data form bookmarks.json to be sent to 
  * CatalogContainer and further processed as it goes down the 
  * component hierarchy
  */
-import catalogsData from '../static/catalogsData.json'
-
+import bookmarks from '../static/bookmarks.json'
 import mailput from "../img/mailput.gif"
 
 /* The use of a .env file to hide the Weather API key is only a 
@@ -54,7 +52,7 @@ class Home extends React.Component {
 		return (
 			<div className="body-container">
 				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
-				<CatalogContainer catalogs={catalogsData} />
+				<CatalogContainer catalogs={ bookmarks.home } />
 				<img src={mailput} alt="Animated gif of email moving transferring between two computer terminals." />
 			</div>
 		)

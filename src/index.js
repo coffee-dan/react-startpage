@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import { FirebaseContext } from './context/firebase'
+import firebaseConfig from './config.json'
+import './index.css';
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// The app will not work without this information. If you are seeing this
+//  comment form GitHub you need to get your own firebase config details
+const firebase = window.firebase.initializeApp( firebaseConfig )
+const database = firebase.database()
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+    <React.StrictMode>
+        <FirebaseContext.Provider value={{ firebase: window.firebase, database: database }}>
+            <App />
+        </FirebaseContext.Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+)

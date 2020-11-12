@@ -1,11 +1,17 @@
 import React from 'react'
+import { CatalogContainer } from '../components'
+
+/* Grabs json data form bookmarks.json to be sent to 
+ * CatalogContainer and further processed as it goes down the 
+ * component hierarchy
+ */
+import bookmarks from '../static/bookmarks.json'
 
 export default function Reference() {
+
     return (
-        <div className="Container">
-            In the original startpage project this was a catalogs page that was used for
-            overflow material. This is likely a page that will stay for this page but if
-            dynamic page creation is added this page will be the only static one.
+        <div className="body-container">
+            <CatalogContainer catalogs={ bookmarks.reference } />
         </div>
     )
 }

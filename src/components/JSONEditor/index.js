@@ -20,6 +20,7 @@ export function JSONEditor() {
         const newId = newData.personal.catalog.length
         newData[ catalogName ].catalog.push({ id: newId, url: linkURL, name: name })
 
+        // dry run
         console.log( newData[ catalogName ].catalog )
         console.log( `Added :: ${name}/${linkURL} to ${page}/${catalogName}` )
 

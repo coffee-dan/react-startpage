@@ -21,10 +21,6 @@ select {
     appearance: none;
 }
 
-.dropdown-title {
-    color: rgb(137, 193, 231);
-}
-
 .submit {
     background: rgb(22, 130, 93);
     cursor: pointer;
