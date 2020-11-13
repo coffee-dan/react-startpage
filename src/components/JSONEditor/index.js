@@ -1,7 +1,7 @@
-// JSON Editor
-import React, { useState } from 'react'
+// JSON Editor form component
+import React, { useState, useContext } from "react"
 import './styles/JSONEditor.css'
-import data from '../../static/test.json'
+import { FirebaseContext } from '../../context/firebase'
 
 export function JSONEditor() {
     const [ page, setPage ] = useState('')
@@ -9,19 +9,25 @@ export function JSONEditor() {
     const [ name, setName ] = useState('')
     const [ linkURL, setLinkURL ] = useState('')
 
+    // pull in realtime database
+    const { database } = useContext( FirebaseContext )
+
     // flag checking if any of the form fields are empty
     let isInvalid = page ==='' || catalogName === '' || name === '' || linkURL === ''
 
     const handleSubmit = ( event ) => {
         event.preventDefault()
         
-        let newData = data
-        
-        const newId = newData.personal.catalog.length
-        newData[ catalogName ].catalog.push({ id: newId, url: linkURL, name: name })
+        const rootRef = database.ref()
+        // Adding link to database
+        const newItemRef = rootRef.child( `${page}/${catalogName}/catalog` ).push()
+        newItemRef.set({
+            id: 11,
+            name: name,
+            url: linkURL
+        })
 
         // dry run
-        console.log( newData[ catalogName ].catalog )
         console.log( `Added :: ${name}/${linkURL} to ${page}/${catalogName}` )
 
         setPage('')

@@ -37,7 +37,7 @@ export default function Home() {
             setRemoteBookmarks( root )
             
             if (remoteBookmarks !== {} ) {
-                console.log( 'good response!' )
+                console.log( 'Home good response!' )
                 console.log( remoteBookmarks )
                 setBookmarksLoading( false )
             }

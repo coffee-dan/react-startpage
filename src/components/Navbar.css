@@ -8,8 +8,9 @@ The navigation bar is meant to only house links that take the user away
 */
 .navbar {
 	position: relative;
-    overflow: hidden;
-	margin-bottom: 15px;	
+	overflow: hidden;
+	margin: 8px 8px 15px 8px;
+	/* margin-bottom: 15px; */
 }
 /* Style the links inside the navigation bar */
 .navbar a {

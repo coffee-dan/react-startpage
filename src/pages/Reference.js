@@ -20,13 +20,12 @@ export default function Reference() {
         const rootRef = database.ref()
         
         rootRef.orderByKey().on('value', snapshot => {
-            console.log('grabbing data...')
+            console.log('querying realtime database...')
             let root = snapshot.val()
-            console.log('saving data...')
             setRemoteBookmarks( root )
-    
+            
             if (remoteBookmarks !== {} ) {
-                console.log( '---nonempty---' )
+                console.log( 'Reference good response!' )
                 console.log( remoteBookmarks )
                 setBookmarksLoading( false )
             }

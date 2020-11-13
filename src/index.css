@@ -14,6 +14,7 @@ body {
     background-image: url(./img/main_background.png);
     background-size: cover;
     /*align-items: center;*/
+    margin: 0;
 }
 
 code {
