@@ -2,14 +2,15 @@
  * thus it should contain each of the main elements of the page
  */
 
-import React from "react"
+import React, { useEffect, useState, useContext } from "react"
 import { WeatherContainer, CatalogContainer } from '../components'
+import { FirebaseContext } from '../context/firebase'
 
 /* Grabs json data form bookmarks.json to be sent to 
  * CatalogContainer and further processed as it goes down the 
  * component hierarchy
  */
-import bookmarks from '../static/bookmarks.json'
+// import bookmarks from '../static/bookmarks.json'
 import mailput from "../img/mailput.gif"
 
 /* The use of a .env file to hide the Weather API key is only a 
@@ -17,46 +18,59 @@ import mailput from "../img/mailput.gif"
  * stage. A backend server should hold onto secrets.
  */
 
-class Home extends React.Component {
-	constructor() {
-		super()
-		this.state = {
-			weatherData: {},
-			loading: true
-        }
-    }
 
-	// When App mounts to DOM fetch weather data from openweathermap API
-	componentDidMount() {
-		// This loading set is not entirely necessary, only here for consistency
-		this.setState({ loading: true })
-		const APILink = "https://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
-		fetch(APILink)
-			.then(response => response.json())
-			.then(data => {
+export default function Home() {
+    const [ weatherData, setWeatherData ] = useState({})
+    const [ weatherLoading, setWeatherLoading ] = useState( true )
+    const [ remoteBookmarks, setRemoteBookmarks ] = useState({})
+    const [ bookmarksLoading, setBookmarksLoading ] = useState( true )
 
-				if( data.cod === 200 )
-					this.setState({
-						weatherData: data,
-						loading: false
-					})
-				
-				console.log(`${data.cod}: ${data.message}`)
-			})
-			.catch(error => {
-				console.log('Error fetching and parsing data', error);
-			})
-    }
+    // pull in realtime database
+    const { database } = useContext( FirebaseContext )
+    useEffect(() => {        
+        // get reference to root of database
+        const rootRef = database.ref()
+        
+        // only run once GOD DAMMIT
+        rootRef.on('value', snapshot => {
+            console.log('grabbing data...')
+            let root = snapshot.val()
+            console.log('saving data...')
+            setRemoteBookmarks( root )
+        
+            setBookmarksLoading( false )
+        })
 
-	render() {
-		return (
-			<div className="body-container">
-				<WeatherContainer data={this.state.weatherData} loading={this.state.loading}/>
-				<CatalogContainer catalogs={ bookmarks.home } />
-				<img src={mailput} alt="Animated gif of email moving transferring between two computer terminals." />
-			</div>
-		)
-    }
+
+
+    }, [])
+
+    // When App mounts to DOM fetch weather data from openweathermap API
+    useEffect(() => {
+        // This weatherLoading set is not entirely necessary, only here for consistency
+        setWeatherLoading( true )
+        const APILink = "https://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=" + process.env.REACT_APP_WEATHER_API_KEY
+        fetch( APILink )
+            .then( response => response.json() )
+            .then( data => {
+
+                if ( data.cod === 200 ) {
+                    setWeatherData( data )
+                    setWeatherLoading( false )
+                }
+
+                console.log( `${data.cod}: ${data.message}` )
+            })
+            .catch( error => {
+                console.log( 'Error fetching and parsing data', error )
+            })
+    }, [])
+
+    return (
+        <div className="body-container">
+            <WeatherContainer data={ weatherData } loading={ weatherLoading } />
+            <CatalogContainer catalogs={ remoteBookmarks.home } loading={ bookmarksLoading } />
+            <img src={ mailput } alt="Animated gif of email moving transferring between two computer terminals." />
+        </div>
+    )
 }
-
-export default Home
