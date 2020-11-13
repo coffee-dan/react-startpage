@@ -25,9 +25,13 @@ export default function Reference() {
             console.log('saving data...')
             setRemoteBookmarks( root )
     
-            // console.log( remoteBookmarks )
-            setBookmarksLoading( false )
+            if (remoteBookmarks !== {} ) {
+                console.log( '---nonempty---' )
+                console.log( remoteBookmarks )
+                setBookmarksLoading( false )
+            }
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

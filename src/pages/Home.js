@@ -31,18 +31,20 @@ export default function Home() {
         // get reference to root of database
         const rootRef = database.ref()
         
-        // only run once GOD DAMMIT
         rootRef.on('value', snapshot => {
-            console.log('grabbing data...')
+            console.log('querying realtime database...')
             let root = snapshot.val()
-            console.log('saving data...')
             setRemoteBookmarks( root )
-        
-            setBookmarksLoading( false )
+            
+            if (remoteBookmarks !== {} ) {
+                console.log( 'good response!' )
+                console.log( remoteBookmarks )
+                setBookmarksLoading( false )
+            }
         })
 
 
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // When App mounts to DOM fetch weather data from openweathermap API
@@ -57,13 +59,15 @@ export default function Home() {
                 if ( data.cod === 200 ) {
                     setWeatherData( data )
                     setWeatherLoading( false )
+                } else {
+                    console.log( `${data.cod}: ${data.message}` )
                 }
 
-                console.log( `${data.cod}: ${data.message}` )
             })
             .catch( error => {
                 console.log( 'Error fetching and parsing data', error )
             })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
