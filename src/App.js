@@ -1,3 +1,5 @@
+/* App exists as a sort of table of contents for the webpage
+ * thus it should contain each of the main elements of the page */
 import React from 'react'
 import {
     BrowserRouter as Router,
