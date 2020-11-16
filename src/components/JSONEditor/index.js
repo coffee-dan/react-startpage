@@ -1,10 +1,10 @@
 // JSON Editor form component
-import React, { useState, useContext } from "react"
-import './styles/JSONEditor.css'
+import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../../context/firebase'
+import './styles/JSONEditor.css'
 
-export function JSONEditor() {
-    const [ page, setPage ] = useState('')
+export function JSONEditor({ location }) {
+    const [ page, setPage ] = useState( location )
     const [ catalogName, setCatalogName ] = useState('')
     const [ name, setName ] = useState('')
     const [ linkURL, setLinkURL ] = useState('')
@@ -28,9 +28,9 @@ export function JSONEditor() {
         })
 
         // dry run
-        console.log( `Added :: ${name}/${linkURL} to ${page}/${catalogName}` )
+        console.log( `Added ${name} - ${linkURL} to ${page}/${catalogName}` )
 
-        setPage('')
+        setPage( location )
         setCatalogName('')
         setName('')
         setLinkURL('')
@@ -51,10 +51,8 @@ export function JSONEditor() {
                 value={ page }
                 onChange={ ({ target }) => setPage( target.value ) }
             >
-                <option value="">--select-page--</option>
                 <option value="home">Home</option>
                 <option value="reference">Reference</option>
-                <option value="accounting">Accounting</option>
             </select>
 
             <select 
@@ -62,10 +60,27 @@ export function JSONEditor() {
                 value={ catalogName }
                 onChange={ ({ target }) => setCatalogName( target.value ) }
             >
+                {/* Currently using brute force hardcoded solution for
+                    ensuring only valid page/catalog combinations are selected
+                    \TODO Implement this behavior using simple data driven solution */}
                 <option value="">--select-catalog--</option>
-                <option value="personal">Personal</option>
-                <option value="general">General</option>
-                <option value="academic">Academic</option>
+                { page === 'home' ? (
+                    <>
+                        <option value="personal">Personal</option>
+                        <option value="general">General</option>
+                        <option value="academic">Academic</option>
+                    </>
+                ) : (
+                    <>
+                        <option value="art">Art</option>
+                        <option value="information">Information</option>
+                        <option value="nix">Nix</option>
+                        <option value="resources">Resources</option>
+                        <option value="sources">Sources</option>
+                        <option value="tools">Tools</option>
+                    </>
+                ) }
+                
             </select>
 
 

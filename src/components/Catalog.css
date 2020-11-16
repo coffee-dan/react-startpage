@@ -40,16 +40,44 @@ This formatting system is used as the traditional logic for tables
   color: white;
 }
 
+
 /* This only effects the style of links */
-.catalog--list a {
+.item--link {
     text-decoration: none;
     color: white;
     text-align: center;
     display: block;
-    margin: .3em 0;
+    margin: .25rem 0;
     font-size: 1.6rem;
 }
 
-.catalog--list a.emphatic {
-    font-style: italic;
+.item {
+    display: grid;
+    grid-template-columns: 16px auto 16px;
 }
+/* .item:hover { background-color: rgba(0, 255, 0, 0.5); } */
+
+.item--link {
+    justify-self: center;
+    align-self: center;
+}
+.item--link.emphatic { font-style: italic; }
+.item--link:hover { background-color: rgba(100, 100, 100, 0.5); }
+
+
+.item button {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    background: none;
+    color: white;
+    justify-self: center;
+    align-self: center;
+}
+.item:hover button { visibility: visible; }
+
+/* .item--delete {  } */
+.item--delete:hover { background-color: rgba(255, 0, 0, 0.5); }
+/* .item--modify {  } */
+.item--modify:hover { background-color: rgba(25, 25, 255, 0.5); }

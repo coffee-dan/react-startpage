@@ -11,6 +11,10 @@ import mailput from "../img/mailput.gif"
 export default function Home() {
     const [ weatherData, setWeatherData ] = useState({})
     const [ weatherLoading, setWeatherLoading ] = useState( true )
+    // pageName is used as the base for constructing a location path to access the
+    // appropriate point of the database anywhere in the webpage
+    // it is maintained at each level of the data-driven components
+    const pageName = 'home'
 
     // When App mounts to DOM fetch weather data from openweathermap API
     useEffect(() => {
@@ -38,9 +42,9 @@ export default function Home() {
     return (
         <div className="body-container">
             <WeatherContainer data={ weatherData } loading={ weatherLoading } />
-            <CatalogContainer page='home' />
+            <CatalogContainer page={ pageName } />
             <img src={ mailput } alt="Animated gif of email moving transferring between two computer terminals." />
-            <JSONEditor />
+            <JSONEditor location={ pageName } />
         </div>
     )
 }

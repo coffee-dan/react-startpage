@@ -23,9 +23,9 @@ export default function CatalogContainer({ page }) {
             
             if (remoteBookmarks !== {} ) {
                 console.log( 'Reference good response!' )
-                console.log( remoteBookmarks )
                 setBookmarksLoading( false )
             }
+            
         })
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -33,9 +33,10 @@ export default function CatalogContainer({ page }) {
 
 	return !bookmarksLoading ? (
 		<div className="catalog--container">
-			{Object.values( remoteBookmarks[ page ] ).map(
-				catalog => <Catalog key={ catalog.id } contents={ catalog } />
-			)}
+            
+            {Object.keys( remoteBookmarks[page] ).map( 
+                key => <Catalog key={ key } contents={ remoteBookmarks[page][key] } location={ `${page}/${key}` } />
+            )}
 		</div>
 	) : (
 		<p>loading...</p>
