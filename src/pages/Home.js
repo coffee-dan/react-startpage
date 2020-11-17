@@ -40,10 +40,10 @@ export default function Home() {
     }, [])
 
     return (
-        <div className="body-container">
+        <div className="body-container home-page">
             <WeatherContainer data={ weatherData } loading={ weatherLoading } />
             <CatalogContainer page={ pageName } />
-            <img src={ mailput } alt="Animated gif of email moving transferring between two computer terminals." />
+            {/* <img src={ mailput } alt="Animated gif of email moving transferring between two computer terminals." /> */}
             <JSONEditor location={ pageName } />
         </div>
     )

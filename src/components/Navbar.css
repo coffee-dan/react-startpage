@@ -10,6 +10,7 @@ The navigation bar is meant to only house links that take the user away
 	position: relative;
 	overflow: hidden;
 	margin: 8px 8px 15px 8px;
+	background-image: linear-gradient(to left, salmon , purple);
 	/* margin-bottom: 15px; */
 }
 /* Style the links inside the navigation bar */

@@ -1,4 +1,5 @@
 import React from "react"
+import './weatherContainer.css'
 
 /* Use data passes from App.js which in turn comes from
  * openweathermap API call.
@@ -20,9 +21,9 @@ function WeatherContainer(props) {
 	
 
 	return (
-		<div className="container">
+		<h1 className="weather-container">
 			{weatherText}
-		</div>
+		</h1>
 	)
 }
 

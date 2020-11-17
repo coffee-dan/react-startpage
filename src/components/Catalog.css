@@ -20,24 +20,26 @@ This formatting system is used as the traditional logic for tables
 
 
 .catalog {
-  width: 165px;
+    width: 200px;
 }
 
 .catalog--title {
-  background-color: #1C1517;
-  border: 1px solid #ddd;
-  
-  width: 160px;
-  height: 75px;
-  
-  display: flex;
-  justify-content: center; /* Horizontal alignment */
-  align-items: center; /* Vertical alignment */
+    /* background-color: #1C1517; */
+    border-bottom: 1px solid #ddd;
     
-  /* font-size: 25px; */
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: white;
+    width: 100%;
+    
+    display: flex;
+    justify-content: left; /* Horizontal alignment */
+    align-items: flex-end; /* Vertical alignment */
+
+    box-sizing: border-box;
+    padding: 0 2px;
+        
+    /* font-size: 25px; */
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
 }
 
 
@@ -53,27 +55,39 @@ This formatting system is used as the traditional logic for tables
 
 .item {
     display: grid;
-    grid-template-columns: 16px auto 16px;
+    grid-template-columns: 23px auto 23px;
 }
-/* .item:hover { background-color: rgba(0, 255, 0, 0.5); } */
+.item:hover .item--link { 
+    background-color: rgba(100, 100, 100, 0.5);
+    text-decoration: underline;
+    font-style: italic;
+}
 
 .item--link {
+    width: 162px;
+    height: 100%;
     justify-self: center;
     align-self: center;
+    
 }
-.item--link.emphatic { font-style: italic; }
-.item--link:hover { background-color: rgba(100, 100, 100, 0.5); }
+/* .item--link.emphatic { font-style: italic; } */
+.item--link:hover { 
+    text-decoration: underline;
+    font-style: italic;
+}
 
 
 .item button {
+    box-sizing: border-box;
     visibility: hidden;
     height: 100%;
-    width: 100%;
+    width: 23;
     border: 0;
     background: none;
     color: white;
     justify-self: center;
     align-self: center;
+    cursor: pointer;
 }
 .item:hover button { visibility: visible; }
 
