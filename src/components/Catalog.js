@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../context/firebase'
 import './Catalog.css'
 
@@ -19,13 +19,25 @@ function CatalogList({ itemList, location }) {
     // The seemingly excessive usage of Object.values() here is to ensure
     // the itemList is in fact a list as there is currently an inconsistency in the
     // database stemming from the method used for adding items
+
+    const { database } = useContext( FirebaseContext )
+    const catalogRef = database.ref( location )
+
     return (
         <div className="catalog--list">
             
             {itemList != null ? (
                 Object.keys( itemList ).map(
                     key => (
-                        <CatalogItem key={ key } item={itemList[ key ]} location={ `${location}/${key}` } />
+                        <CatalogItem 
+                            // key needs to be sent down twice due to react reserving
+                            // 'key' as a special prop that cannot be accessed in the child
+                            key={ key } 
+                            id={ key }
+                            item={itemList[ key ]} 
+                            location={ `${location}/${key}` } 
+                            catalogRef={ catalogRef }
+                        />
                     )
                 )
             ) : (
@@ -36,27 +48,56 @@ function CatalogList({ itemList, location }) {
 }
 
 
-function CatalogItem({ item, location }) {
-    // const [ modifyMode, setModifyMode ] =  useState( false )
-    // const [ newName, setNewName ] = useState('')
+function CatalogItem({ id, item, location, catalogRef }) {
+    const [ modifyMode, setModifyMode ] =  useState( false )
+    const [ newName, setNewName ] = useState('')
     
     // \TODO Create cache system so that the most recent modification or deletion
     // can be undone
 
-    const { database } = useContext( FirebaseContext )
-
     const onDelete = () => {
-        const itemRef = database.ref( location )
+        catalogRef.child( id ).remove()
+        console.log(`Deleted ${location}`)        
+    }
 
-        itemRef.remove()
-        console.log(`Deleted ${location}`)
-        
+
+    // \TODO implement an auto focus system so that when the text box show it the
+    //      user can immediately start typing
+    const onModify = ( event ) => {
+        event.preventDefault()
+
+        if (modifyMode) {
+            if (newName !== '') {
+                catalogRef.child( id ).update({
+                    "name": newName
+                })
+            }
+
+            setNewName('')
+        }
+
+        setModifyMode( !modifyMode )
+
+        console.log(`Modified ${location}`)
     }
 
     return (
         <div className="item">
-            <button className="item--modify" >~</button>
-            <a className="item--link" key={ item.id } href={ item.url }>{ item.name }</a>
+            <button className="item--modify" onClick={ onModify } >~</button>
+            {
+                modifyMode ? (
+                    <input 
+                        className="item--modify-input"
+                        id={ `${location}` }
+                        type="text"
+                        value={ newName }
+                        onChange={ ({ target }) => setNewName( target.value ) }
+                        placeholder='type new name'
+                    />
+                ) : (
+                    <a className="item--link" key={ item.id } href={ item.url }>{ item.name }</a>
+                )
+            }
             <button className="item--delete" onClick={ onDelete } >x</button>
         </div>
     )
