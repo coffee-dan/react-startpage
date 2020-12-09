@@ -1,20 +1,25 @@
 form {
-    /* margin: 0; */
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* width: 100%; */
     height: 23px;
     display: inline-grid;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
     column-gap: 1px;
-    /* grid-template-rows: auto; */
-    
+    grid-template-rows: auto;
+}
+
+/* \TODO implement media query guided grid styling for
+        json editor tool */
+@media (max-width: 800px) {
+    form {
+        grid-template-areas: 
+            'submit form-element form-element'
+            'submit form-element form-element'
+        ;
+    }
 }
 
 .form-element {
     border: none;
     box-sizing: border-box;
-    /* margin: 0 0 2px; */
     padding: 0 12px;
     background: rgb(0, 122, 204);
     color: white;
@@ -25,12 +30,12 @@ select {
 }
 
 .submit {
-    background: rgb(22, 130, 93);
+    background: rgb(114, 136, 128);
     cursor: pointer;
     font-weight: bold;
     
 }
 
 .submit:disabled {
-    opacity: 0.5;
+    opacity: 0.25;
 }

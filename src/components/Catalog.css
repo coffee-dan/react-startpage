@@ -1,4 +1,4 @@
-/*?
+/*
 =======================================================================
 Catalog container, catalog and link details
 =======================================================================
@@ -20,7 +20,9 @@ This formatting system is used as the traditional logic for tables
 
 
 .catalog {
+    background-color: cadetblue;
     width: 200px;
+    margin-bottom: 20px;
 }
 
 .catalog--title {
@@ -35,6 +37,7 @@ This formatting system is used as the traditional logic for tables
 
     box-sizing: border-box;
     padding: 0 2px;
+    margin-bottom: 8px;
         
     /* font-size: 25px; */
     font-size: 2.5rem;
@@ -73,7 +76,7 @@ This formatting system is used as the traditional logic for tables
 /* .item--link.emphatic { font-style: italic; } */
 .item--link:hover { 
     text-decoration: underline;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 
