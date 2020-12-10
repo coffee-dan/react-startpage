@@ -1,6 +1,13 @@
 // Home page
-import React, { useEffect, useState } from 'react'
-import { WeatherContainer, CatalogContainer, JSONEditor } from '../components'
+import React, { useContext, useEffect, useState } from 'react'
+import {
+	WeatherContainer,
+	CatalogContainer,
+	JSONEditor,
+	Signin,
+} from '../components'
+import { FirebaseContext } from '../context/firebase'
+import useAuthListener from '../hooks/use-auth-listener'
 
 /* The use of a .env file to hide the Weather API key is only a
  * stop gap measure, should not be maintained once past a development
@@ -9,6 +16,10 @@ import { WeatherContainer, CatalogContainer, JSONEditor } from '../components'
 export default function Home() {
 	const [weatherData, setWeatherData] = useState({})
 	const [weatherLoading, setWeatherLoading] = useState(true)
+
+	const { firebase } = useContext(FirebaseContext)
+
+	const { user } = useAuthListener()
 	// pageName is used as the base for constructing a location path to access the
 	// appropriate point of the database anywhere in the webpage
 	// it is maintained at each level of the data-driven components
@@ -41,7 +52,14 @@ export default function Home() {
 		<div className="body-container home-page">
 			<WeatherContainer data={weatherData} loading={weatherLoading} />
 			<CatalogContainer page={pageName} />
-			<JSONEditor location={pageName} />
+			{user && user.uid === process.env.REACT_APP_ADMIN_UID ? (
+				<>
+					<JSONEditor location={pageName} />
+					<p onClick={() => firebase.auth().signOut()}>Sign out</p>
+				</>
+			) : (
+				<Signin />
+			)}
 		</div>
 	)
 }

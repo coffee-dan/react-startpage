@@ -1,11 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# local config
-.prettierrc
-
 # api keys
 .env
-config.json
 
 # dependencies
 /node_modules

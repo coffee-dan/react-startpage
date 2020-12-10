@@ -4,3 +4,4 @@
 export { default as WeatherContainer } from './weather-container'
 export { default as CatalogContainer } from './catalog-container'
 export { default as JSONEditor } from './json-editor'
+export { default as Signin } from './signin'
