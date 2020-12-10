@@ -1,7 +1,7 @@
 // JSON Editor form component
 import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../../context/firebase'
-import './styles/JSONEditor.css'
+import './styles/json-editor.css'
 
 // \TODO create authentication system
 // 		\TODO level 1: admin sign in. json editor locked to admin access
@@ -11,7 +11,7 @@ import './styles/JSONEditor.css'
 
 // \TODO test switching to formik
 
-export function JSONEditor({ location }) {
+export default function JSONEditor({ location }) {
 	const [page, setPage] = useState(location)
 	const [catalogName, setCatalogName] = useState('')
 	const [name, setName] = useState('')

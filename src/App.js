@@ -9,8 +9,6 @@ import {
 } from 'react-router-dom'
 import { Schedule, Reference, Unsorted, Home, Notes, About } from './pages'
 
-import './components/Navbar.css'
-
 function App() {
 	return (
 		<Router>

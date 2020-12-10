@@ -1,7 +1,6 @@
 // Home page
 import React, { useEffect, useState } from 'react'
-import { WeatherContainer, CatalogContainer } from '../components'
-import { JSONEditor } from '../components/JSONEditor'
+import { WeatherContainer, CatalogContainer, JSONEditor } from '../components'
 
 /* The use of a .env file to hide the Weather API key is only a
  * stop gap measure, should not be maintained once past a development

@@ -1,5 +1,5 @@
-import React from "react"
-import './weatherContainer.css'
+import React from 'react'
+import './styles/weather-container.css'
 
 /* Use data passes from App.js which in turn comes from
  * openweathermap API call.
@@ -8,23 +8,25 @@ import './weatherContainer.css'
 function WeatherContainer(props) {
 	let weatherText
 	if (props.loading) {
-		weatherText = "Retrieving weather data..."
-	}
-	else {
+		weatherText = 'Retrieving weather data...'
+	} else {
 		const name = props.data.name
 		const description = props.data.weather[0].description
 		const temp = props.data.main.temp.toFixed(0)
 		const humidity = props.data.main.humidity.toFixed(2)
 
-		weatherText = name + " : " + description + " , " + temp + "\u00b0F at " + humidity + "%"
-    }
-	
+		weatherText =
+			name +
+			' : ' +
+			description +
+			' , ' +
+			temp +
+			'\u00b0F at ' +
+			humidity +
+			'%'
+	}
 
-	return (
-		<h1 className="weather-container">
-			{weatherText}
-		</h1>
-	)
+	return <h1 className="weather-container">{weatherText}</h1>
 }
 
 export default WeatherContainer

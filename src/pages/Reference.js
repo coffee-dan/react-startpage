@@ -1,7 +1,6 @@
 // Reference page - Bulk storage of more niche links
 import React from 'react'
-import { CatalogContainer } from '../components'
-import { JSONEditor } from '../components/JSONEditor'
+import { CatalogContainer, JSONEditor } from '../components'
 
 // displays reference catalogs
 export default function Reference() {
