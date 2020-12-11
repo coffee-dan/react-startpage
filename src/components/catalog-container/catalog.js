@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../../context/firebase'
+import useAuthListener from '../../hooks/use-auth-listener'
 import './styles/catalog.css'
 
 function Catalog({ contents, location }) {
@@ -53,7 +54,14 @@ function CatalogItem({ id, item, location, catalogRef }) {
 	// \TODO Create cache system so that the most recent modification or deletion
 	// can be undone
 
+	const { user } = useAuthListener()
+	const isAdmin = user && user.uid === process.env.REACT_APP_ADMIN_UID
+
 	const onDelete = () => {
+		if (!isAdmin) {
+			console.log(`>>> dry run: Deleted ${location}`)
+			return
+		}
 		catalogRef.child(id).remove()
 		console.log(`Deleted ${location}`)
 	}
@@ -63,6 +71,10 @@ function CatalogItem({ id, item, location, catalogRef }) {
 	const onModify = (event) => {
 		event.preventDefault()
 
+		if (!isAdmin) {
+			console.log(`>>> dry run: Modified ${location}`)
+			return
+		}
 		if (modifyMode) {
 			if (newName !== '') {
 				catalogRef.child(id).update({
@@ -83,7 +95,7 @@ function CatalogItem({ id, item, location, catalogRef }) {
 			<button className="item--modify" onClick={onModify}>
 				~
 			</button>
-			{modifyMode ? (
+			{isAdmin && modifyMode ? (
 				<input
 					className="item--modify-input"
 					id={`${location}`}
