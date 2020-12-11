@@ -1,9 +1,16 @@
 form {
+    width: 1000px;
     height: 23px;
     display: inline-grid;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
     column-gap: 1px;
     grid-template-rows: auto;
+}
+
+@media (max-width: 1500px) {
+    form {
+        width: 800px;
+    }
 }
 
 /* \TODO implement media query guided grid styling for
@@ -21,21 +28,22 @@ form {
     border: none;
     box-sizing: border-box;
     padding: 0 12px;
-    background: rgb(0, 122, 204);
+    background: cadetblue;
     color: white;
 }
 
 select {
+    cursor: pointer;
     appearance: none;
 }
 
 .submit {
-    background: rgb(114, 136, 128);
+    /* border: */
+    background: cadetblue;
     cursor: pointer;
     font-weight: bold;
-    
 }
 
 .submit:disabled {
-    opacity: 0.25;
+    opacity: 0.5;
 }

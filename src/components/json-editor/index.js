@@ -4,10 +4,10 @@ import { FirebaseContext } from '../../context/firebase'
 import './styles/json-editor.css'
 
 // \TODO create authentication system
-// 		\TODO level 1: admin sign in. json editor locked to admin access
-// 		\TODO level 2: level 1 + guest sign in that grants access to json editor
+// 		\TODO level 1: admin sign in. json editor locked to admin access [x]
+// 		\TODO level 2: level 1 + guest sign in that grants access to json editor [ ]
 //					on a toy version of startpage. possibly temporary edits
-// 		\TODO level 3: level 2 + full sign up sign in
+// 		\TODO level 3: level 2 + full sign up sign in [ ]
 
 // \TODO test switching to formik
 
@@ -50,7 +50,7 @@ export default function JSONEditor({ location }) {
 	return (
 		<form onSubmit={handleSubmit}>
 			<input
-				className="form-element submit"
+				className="submit"
 				disabled={isInvalid}
 				type="submit"
 				value="Add Link"

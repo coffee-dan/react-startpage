@@ -1,6 +1,7 @@
 // Signin Component
 import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../../context/firebase'
+import './styles/signin.css'
 
 export default function Signin() {
 	// Pull in firebase for authentication
@@ -25,16 +26,17 @@ export default function Signin() {
 
 	return (
 		<>
-			<h1>Admin Signin</h1>
-			{error && <div>{error}</div>}
-			<form onSubmit={handleSignin} method="POST">
+			<h2>Admin Signin</h2>
+			<form className="signin" onSubmit={handleSignin} method="POST">
 				<input
+					className="signin--element"
 					placeholder="Email Address"
 					value={emailAddress}
 					onChange={({ target }) => setEmailAddress(target.value)}
 				/>
 
 				<input
+					className="signin--element"
 					type="password"
 					value={password}
 					autoComplete="off"
@@ -42,10 +44,11 @@ export default function Signin() {
 					onChange={({ target }) => setPassword(target.value)}
 				/>
 
-				<button disabled={isInvalid} type="submit">
+				<button className="submit" disabled={isInvalid} type="submit">
 					Sign In
 				</button>
 			</form>
+			{error && <div className="error">{error}</div>}
 		</>
 	)
 }
