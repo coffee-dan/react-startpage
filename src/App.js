@@ -7,7 +7,15 @@ import {
 	Route,
 	NavLink,
 } from 'react-router-dom'
-import { Schedule, Reference, Unsorted, Home, Notes, About } from './pages'
+import {
+	Schedule,
+	Reference,
+	Unsorted,
+	Home,
+	Notes,
+	About,
+	Admin,
+} from './pages'
 
 function App() {
 	return (
@@ -54,6 +62,8 @@ function App() {
 				<Route exact path="/about" component={About} />
 
 				<Route exact path="/notes" component={Notes} />
+
+				<Route exact path="/admin" component={Admin} />
 			</Switch>
 		</Router>
 	)

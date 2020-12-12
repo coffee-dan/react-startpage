@@ -11,6 +11,9 @@ import './index.css'
 const firebase = window.firebase.initializeApp(
 	JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG)
 )
+
+console.log(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG))
+
 const database = firebase.database()
 
 ReactDOM.render(

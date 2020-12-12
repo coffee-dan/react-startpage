@@ -51,7 +51,7 @@ function CatalogItem({ id, item, location, catalogRef }) {
 	const [modifyMode, setModifyMode] = useState(false)
 	const [newName, setNewName] = useState('')
 
-	// \TODO Create cache system so that the most recent modification or deletion
+	// TODO Create cache system so that the most recent modification or deletion
 	// can be undone
 
 	const { user } = useAuthListener()
@@ -66,7 +66,7 @@ function CatalogItem({ id, item, location, catalogRef }) {
 		console.log(`Deleted ${location}`)
 	}
 
-	// \TODO implement an auto focus system so that when the text box show it the
+	// TODO implement an auto focus system so that when the text box show it the
 	//      user can immediately start typing
 	const onModify = (event) => {
 		event.preventDefault()

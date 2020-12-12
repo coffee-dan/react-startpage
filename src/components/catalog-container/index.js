@@ -16,16 +16,22 @@ export default function CatalogContainer({ page }) {
 		// get reference to root of database
 		const rootRef = database.ref()
 
-		rootRef.orderByKey().on('value', (snapshot) => {
-			console.log('querying realtime database...')
-			let root = snapshot.val()
-			setRemoteBookmarks(root)
+		rootRef.orderByKey().on(
+			'value',
+			(snapshot) => {
+				console.log('querying realtime database...')
+				let root = snapshot.val()
+				setRemoteBookmarks(root)
 
-			if (remoteBookmarks !== {}) {
-				console.log('Reference good response!')
-				setBookmarksLoading(false)
+				if (remoteBookmarks !== {}) {
+					console.log('Reference good response!')
+					setBookmarksLoading(false)
+				}
+			},
+			(error) => {
+				alert(error)
 			}
-		})
+		)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 

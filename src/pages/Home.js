@@ -1,11 +1,6 @@
 // Home page
 import React, { useContext, useEffect, useState } from 'react'
-import {
-	WeatherContainer,
-	CatalogContainer,
-	JSONEditor,
-	Signin,
-} from '../components'
+import { WeatherContainer, CatalogContainer, JSONEditor } from '../components'
 import { FirebaseContext } from '../context/firebase'
 import useAuthListener from '../hooks/use-auth-listener'
 
@@ -57,9 +52,7 @@ export default function Home() {
 					<JSONEditor location={pageName} />
 					<p onClick={() => firebase.auth().signOut()}>Sign out</p>
 				</>
-			) : (
-				<Signin />
-			)}
+			) : null}
 		</div>
 	)
 }

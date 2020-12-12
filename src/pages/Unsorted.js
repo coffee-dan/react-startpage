@@ -1,6 +1,6 @@
 import React from 'react'
 
-// \TODO look into dynamically creating catalog pages
+// TODO look into dynamically creating catalog pages
 export default function Unsorted() {
 	return (
 		<div className="body-container">

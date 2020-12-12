@@ -1,7 +1,7 @@
 // Schedule Page
 import React from 'react'
 
-// \TODO find a use for this page, preferably a calendar app as constantly
+// TODO find a use for this page, preferably a calendar app as constantly
 //  changing an image like in the original startpage project is not viable
 export default function Schedule() {
 	return (
