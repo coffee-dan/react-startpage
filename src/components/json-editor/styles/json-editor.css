@@ -39,7 +39,7 @@ select {
 
 .submit {
     /* border: */
-    background: cadetblue;
+    background: var(--clr-accent);
     cursor: pointer;
     font-weight: bold;
 }

@@ -5,12 +5,7 @@ import React from 'react'
 export default function About() {
 	return (
 		<div className="body-container">
-			<p
-				className="text"
-				style={{
-					marginTop: 50,
-				}}
-			>
+			<p className="text">
 				Startpages are a number of things.{' '}
 				<a
 					className="text--link"

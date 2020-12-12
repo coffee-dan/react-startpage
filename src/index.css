@@ -1,16 +1,36 @@
+:root {
+    /* Font families */
+    --ff-primary: Garamond, serif;
+
+    /* Font weights */
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    /* Colors */
+    --clr-light: whitesmoke;
+    --clr-dark: black;
+    --clr-accent: cadetblue;
+
+    /* Font sizes */
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    /* box shadow */
+    --bs-std: 8px 8px black;
+}
+
 /* Base font size. All other fonts size relative to this. */
 html { font-size: 10px; }
 
 body {
     font-family: Garamond, serif;
-    color: white;
+    color: var(--clr-light);
 
     background-color: #1E1E1E; /* fallback background */
     background-image: linear-gradient(to right, salmon , purple);
-    /* background-image: linear-gradient(45deg, #874da2, #c43a30); */
 
-    /* background-image: url(./img/main_background.png); */
-    /* background-size: cover; */
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -20,8 +40,7 @@ body {
     width: 600px;
     font-size: 2rem;
 }
-
-
+.text:first-child { margin-top: 50px; }
 .text--link { color: powderblue; }
 .text--link:hover { text-decoration: none; }
 
@@ -42,26 +61,12 @@ code {
     justify-content: center;
 }
 
-/* Currently used in WeatherContainer.js and PokemonDisplay.js 
-    the styling is able to reach these components without explicit
-    imports for unknown reasons */
-.container {
-    width: 400px;
-    background-color: #1C1517;
-    border: 1px solid #ddd;
-    padding: 8px 8px;
-    text-align: center;
-    font-size: 1.6rem;
-}
-
 .catalog--container {
-    background-color: black;
-
     display: grid;
     
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    column-gap: 10px;
+    column-gap: 16px;
     
 	justify-content: center;
 	margin: 1.6rem 0;
@@ -90,15 +95,17 @@ The navigation bar is meant to only house links that take the user away
 .navbar {
 	position: relative;
 	overflow: hidden;
-	margin: 8px 8px 15px 8px;
-	background-image: linear-gradient(to left, salmon , purple);
-	/* margin-bottom: 15px; */
+    margin: 8px 8px 15px 8px;
+    
+    background-color: var(--clr-accent);
+    box-shadow: 3px 3px black;
+	border-radius: 4px;
 }
 /* Style the links inside the navigation bar */
 .navbar a {
     text-decoration: none;
 	float: left;
-    color: white;
+    color: var(--clr-light);
 	text-align: center;
     padding: 3px 8px;
 	/* font-size: 15px; */
@@ -106,14 +113,15 @@ The navigation bar is meant to only house links that take the user away
 }
 /* Change style of links in hover */
 .navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    /* background-color: #ddd; */
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
 }
 /* Change style of the active/current link */
 .selected {
-	/*background-color: #0017CC;*/
-    color: white;
-	font-style: italic;
+    /* color: white; */
+    font-style: italic;
+    text-decoration: underline;
 }
 /* Centered section inside the navigation bar */
 .navbar--center {

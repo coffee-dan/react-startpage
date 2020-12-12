@@ -1,6 +1,5 @@
 .weather-container {
-    /* border: 1px solid whitesmoke; */
+    font-family: var(--ff-primary);
     display: flex;
-
     justify-content: left;
 }

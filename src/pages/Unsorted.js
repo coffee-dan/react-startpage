@@ -4,7 +4,7 @@ import React from 'react'
 export default function Unsorted() {
 	return (
 		<div className="body-container">
-			<div className="container">
+			<div className="text">
 				In original startpage project this was an additional catalogs
 				page specifically for financial matters. This may no longer be
 				needed as it is too restrictive. I would want the user to be

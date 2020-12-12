@@ -20,14 +20,19 @@ This formatting system is used as the traditional logic for tables
 
 
 .catalog {
-    background-color: cadetblue;
-    width: 200px;
+    border-radius: 8px 24px;
+    box-shadow: var(--bs-std);
+    background-color: var(--clr-accent);
+    width: 210px;
     margin-bottom: 20px;
 }
 
+.catalog:first-of-type { border-radius: 24px 8px; }
+.catalog:last-of-type { border-radius: 24px 8px; }
+
 .catalog--title {
-    /* background-color: #1C1517; */
-    border-bottom: 1px solid #ddd;
+    margin-top: 0.75rem;
+    border-bottom: 1px solid var(--clr-light);
     
     width: 100%;
     
@@ -36,47 +41,43 @@ This formatting system is used as the traditional logic for tables
     align-items: flex-end; /* Vertical alignment */
 
     box-sizing: border-box;
-    padding: 0 2px;
+    padding: 0 8px;
     margin-bottom: 8px;
         
     /* font-size: 25px; */
     font-size: 2.5rem;
     font-weight: 600;
-    color: white;
+    color: var(--clr-light);
 }
 
+.item {
+    /* height: 24px; */
+    display: grid;
+    grid-template-columns: 24px auto 24px;
+}
+.item:last-of-type { margin-bottom: 1rem; }
 
 /* This only effects the style of links */
 .item--link {
     text-decoration: none;
-    color: white;
+    color: var(--clr-light);
     text-align: center;
-    display: block;
-    margin: .25rem 0;
+
+    box-sizing: border-box;
+
+    vertical-align: middle;
+    padding-top: 2px;
+    margin: 2px 0;
     font-size: 1.6rem;
-}
 
-.item {
-    display: grid;
-    grid-template-columns: 23px auto 23px;
-}
-.item:hover .item--link { 
-    background-color: rgba(100, 100, 100, 0.5);
-    text-decoration: underline;
-    font-style: italic;
-}
-
-.item--link {
     width: 162px;
     height: 100%;
     justify-self: center;
     align-self: center;
-    
 }
-/* .item--link.emphatic { font-style: italic; } */
-.item--link:hover { 
-    text-decoration: underline;
-    /* font-style: italic; */
+.item:hover .item--link { 
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
 }
 
 
@@ -84,17 +85,21 @@ This formatting system is used as the traditional logic for tables
     box-sizing: border-box;
     visibility: hidden;
     height: 100%;
-    width: 23;
+    width: 24px;
     border: 0;
     background: none;
-    color: white;
+    color: var(--clr-light);
     justify-self: center;
     align-self: center;
     cursor: pointer;
 }
 .item:hover button { visibility: visible; }
 
-/* .item--delete {  } */
-.item--delete:hover { background-color: rgba(255, 0, 0, 0.5); }
-/* .item--modify {  } */
-.item--modify:hover { background-color: rgba(25, 25, 255, 0.5); }
+.item--delete:hover { 
+    background-color: rgb(255, 0, 0);
+    color: var(--clr-dark);
+}
+.item--modify:hover {
+    background-color: rgb(25, 25, 255);
+    color: var(--clr-light);
+}

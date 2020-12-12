@@ -6,7 +6,7 @@ import React from 'react'
 export default function Schedule() {
 	return (
 		<div className="body-container">
-			<div className="container">
+			<div className="text">
 				Originally only contained a picture of work and or school
 				schedule. May do better to contain calendar of sorts.
 			</div>

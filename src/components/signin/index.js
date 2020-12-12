@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import { FirebaseContext } from '../../context/firebase'
 import './styles/signin.css'
 
-// TODO Move signin to more discreet location ex: /admin
+// \TODO Move signin to more discreet location ex: /admin
 // 		TODO lvl 2 make the /admin page a funny meme
 export default function Signin() {
 	// Pull in firebase for authentication

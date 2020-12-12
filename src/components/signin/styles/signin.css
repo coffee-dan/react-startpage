@@ -1,23 +1,23 @@
 .signin {    
     height: 23px;
-    width: 75%;
+    width: 600px;
     display: grid;
     grid-template-columns: 3fr 3fr 1fr;
 }
 
 .signin--element {
-    background-color: cadetblue;
-    color: white;
+    background-color: var(--clr-accent);
+    color: var(--clr-light);
     border: none;
     box-sizing: border-box;
     padding: 0 12px;
 }
 
 .submit {
-    background: cadetblue;
+    background: var(--clr-accent);
     cursor: pointer;
     font-weight: bold;
-    color: white;
+    color: var(--clr-light);
 }
 
 .submit:disabled {
