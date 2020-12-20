@@ -1,20 +1,42 @@
-# react-startpage
-React.js based implementation of a startpage. <br />
-Possibly running [here](https://react-startpage.herokuapp.com/)
+# React Startpage
+React - As in ReactJS, a powerful web framework. <br />
+Startpage - An extensible browser productivity toolkit. <br />
+[Live demo](https://react-startpage.herokuapp.com/)
 
 ## Instructions to install React enviroment on Windows
 
-1. [Download and install most recent LTS version of Node.js](https://nodejs.org/en/download/)
-* The Node.js installer includes the NPM package manager. NPM is needed to complete the rest of the steps in Powershell.
+1. [Download and install most recent LTS version of Node.js and NPM](https://nodejs.org/en/download/)
 
-2. `npm -v` verify npm install. And cross referrence with version in package.json
+2. `npm -v` verify npm install
 
-3. `npx create-react-app react-startpage` install and use create-react-app 
-* Unfortunately this will create a new directory so you will need to move your git repository to this new folder
+3. `git clone https://github.com/coffee-dan/react-startpage.git` get code
 
-4. `npm install` install dependencies locally
+4. `npm install` install project dependencies
 
-### Links to more detailed instructions
+## Deployment instructions
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+`heroku login`
+
+Clone the repository
+
+Use Git to clone react-startpage's source code to your local machine.
+
+`heroku git:clone -a react-startpage`
+`cd react-startpage`
+
+Deploy your changes
+
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+`git add .`
+`git commit -am "make it better"`
+`git push heroku master`
+
+### Links to more detailed setup instructions
 [Installing NPM](https://phoenixnap.com/kb/install-node-js-npm-on-windows)
 
 [Installing create-react-app](https://github.com/facebook/create-react-app)
@@ -24,7 +46,7 @@ Possibly running [here](https://react-startpage.herokuapp.com/)
 ## This project uses these tools
 [Open Weather API](https://home.openweathermap.org/) - 
     A simple free weather API that requires an account for a key. <br />
-[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
+[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) - 
     An npm package runner that replaces the need for global installs and is the preferred tool for this project. <br />
 [Node JS](https://nodejs.org/en/) - 
     An asynchronous event-driven JavaScript runtime built with scalable network applications as the goal. <br />
