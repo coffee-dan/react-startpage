@@ -2,7 +2,7 @@
   "name": "react-startpage",
   "version": "0.9.1",
   "description": "Startpage | Bookmark handler, etc.",
-  "main": "server.js",
+  "main": "src/index.js",
   "engines": {
     "node": ">=12.18.4"
   },
@@ -12,8 +12,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "chokidar": "^3.4.3",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
     "object-path": "^0.11.5",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -21,8 +19,8 @@
     "react-scripts": "^4.0.0"
   },
   "scripts": {
-    "start": "node server.js",
     "dev": "react-scripts start",
+    "start": "serve --single build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
