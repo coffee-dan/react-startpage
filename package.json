@@ -3,6 +3,7 @@
   "version": "0.9.1",
   "description": "Startpage | Bookmark handler, etc.",
   "main": "src/index.js",
+  "homepage": "/",
   "engines": {
     "node": ">=12.18.4"
   },
@@ -16,7 +17,8 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^4.0.0",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "dev": "react-scripts start",
