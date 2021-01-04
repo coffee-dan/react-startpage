@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 // TODO look into dynamically creating catalog pages
-export default function Unsorted() {
+
+// UNSORTED PAGE COMPONENT
+function Unsorted() {
 	return (
 		<div className="body-container">
 			<div className="text">
@@ -11,5 +13,7 @@ export default function Unsorted() {
 				able to create new catalogs pages dynamically.
 			</div>
 		</div>
-	)
+	);
 }
+
+export default Unsorted;

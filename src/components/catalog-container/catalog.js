@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react'
-import { FirebaseContext } from '../../context/firebase'
-import useAuthListener from '../../hooks/use-auth-listener'
-import './styles/catalog.css'
+import React, { useState, useContext } from 'react';
 
+import { FirebaseContext } from '../../context/firebase';
+import useAuthListener from '../../hooks/use-auth-listener';
+import './styles/catalog.css';
+
+// CATALOG COMPONENT
 function Catalog({ contents, location }) {
 	return (
 		<div className="catalog">
@@ -12,9 +14,10 @@ function Catalog({ contents, location }) {
 				location={`${location}/catalog`}
 			/>
 		</div>
-	)
+	);
 }
 
+// CATALOG LIST SUB-COMPONENT
 function CatalogList({ itemList, location }) {
 	// itemList can come in as an hash table or array of items for the catalog
 	// location holds a string path describing where the node is located
@@ -23,13 +26,13 @@ function CatalogList({ itemList, location }) {
 	// the itemList is in fact a list as there is currently an inconsistency in the
 	// database stemming from the method used for adding items
 
-	const { database } = useContext(FirebaseContext)
-	const catalogRef = database.ref(location)
+	const { database } = useContext(FirebaseContext);
+	const catalogRef = database.ref(location);
 
 	return (
 		<div className="catalog--list">
 			{itemList != null ? (
-				Object.keys(itemList).map((key) => (
+				Object.keys(itemList).map(key => (
 					<CatalogItem
 						// key needs to be sent down twice due to react reserving
 						// 'key' as a special prop that cannot be accessed in the child
@@ -44,51 +47,52 @@ function CatalogList({ itemList, location }) {
 				<h1>This catalog is empty</h1>
 			)}
 		</div>
-	)
+	);
 }
 
+// CATALOG ITEM SUB-COMPONENT
 function CatalogItem({ id, item, location, catalogRef }) {
-	const [modifyMode, setModifyMode] = useState(false)
-	const [newName, setNewName] = useState('')
+	const [modifyMode, setModifyMode] = useState(false);
+	const [newName, setNewName] = useState('');
 
 	// TODO Create cache system so that the most recent modification or deletion
 	// can be undone
 
-	const { user } = useAuthListener()
-	const isAdmin = user && user.uid === process.env.REACT_APP_ADMIN_UID
+	const { user } = useAuthListener();
+	const isAdmin = user && user.uid === process.env.REACT_APP_ADMIN_UID;
 
 	const onDelete = () => {
 		if (!isAdmin) {
-			console.log(`>>> dry run: Deleted ${location}`)
-			return
+			console.log(`>>> dry run: Deleted ${location}`);
+			return;
 		}
-		catalogRef.child(id).remove()
-		console.log(`Deleted ${location}`)
-	}
+		catalogRef.child(id).remove();
+		console.log(`Deleted ${location}`);
+	};
 
 	// TODO implement an auto focus system so that when the text box show it the
 	//      user can immediately start typing
-	const onModify = (event) => {
-		event.preventDefault()
+	const onModify = event => {
+		event.preventDefault();
 
 		if (!isAdmin) {
-			console.log(`>>> dry run: Modified ${location}`)
-			return
+			console.log(`>>> dry run: Modified ${location}`);
+			return;
 		}
 		if (modifyMode) {
 			if (newName !== '') {
 				catalogRef.child(id).update({
 					name: newName,
-				})
+				});
 			}
 
-			setNewName('')
+			setNewName('');
 		}
 
-		setModifyMode(!modifyMode)
+		setModifyMode(!modifyMode);
 
-		console.log(`Modified ${location}`)
-	}
+		console.log(`Modified ${location}`);
+	};
 
 	return (
 		<div className="item">
@@ -113,7 +117,7 @@ function CatalogItem({ id, item, location, catalogRef }) {
 				x
 			</button>
 		</div>
-	)
+	);
 }
 
-export default Catalog
+export default Catalog;

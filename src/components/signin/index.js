@@ -1,30 +1,32 @@
-// Signin Component
-import React, { useState, useContext } from 'react'
-import { FirebaseContext } from '../../context/firebase'
-import './styles/signin.css'
+import React, { useState, useContext } from 'react';
+
+import { FirebaseContext } from '../../context/firebase';
+import './styles/signin.css';
 
 // \TODO Move signin to more discreet location ex: /admin
 // 		TODO lvl 2 make the /admin page a funny meme
-export default function Signin() {
+
+// SIGN IN COMPONENT
+function Signin() {
 	// Pull in firebase for authentication
-	const { firebase } = useContext(FirebaseContext)
-	const [error, setError] = useState('')
-	const [emailAddress, setEmailAddress] = useState('')
-	const [password, setPassword] = useState('')
+	const { firebase } = useContext(FirebaseContext);
+	const [error, setError] = useState('');
+	const [emailAddress, setEmailAddress] = useState('');
+	const [password, setPassword] = useState('');
 
-	let isInvalid = password === '' || emailAddress === ''
+	let isInvalid = password === '' || emailAddress === '';
 
-	const handleSignin = (event) => {
-		event.preventDefault()
+	const handleSignin = event => {
+		event.preventDefault();
 
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(emailAddress, password)
-			.catch((error) => {
-				setPassword('')
-				setError(error.message)
-			})
-	}
+			.catch(error => {
+				setPassword('');
+				setError(error.message);
+			});
+	};
 
 	return (
 		<>
@@ -52,5 +54,7 @@ export default function Signin() {
 			</form>
 			{error && <div className="error">{error}</div>}
 		</>
-	)
+	);
 }
+
+export default Signin;

@@ -1,7 +1,7 @@
-// JSON Editor form component
-import React, { useState, useContext } from 'react'
-import { FirebaseContext } from '../../context/firebase'
-import './styles/json-editor.css'
+import React, { useState, useContext } from 'react';
+
+import { FirebaseContext } from '../../context/firebase';
+import './styles/json-editor.css';
 
 // \TODO create authentication system
 // 		\TODO level 1: admin sign in. json editor locked to admin access [x]
@@ -11,41 +11,42 @@ import './styles/json-editor.css'
 
 // \TODO test switching to formik
 
-export default function JSONEditor({ location }) {
-	const [page, setPage] = useState(location)
-	const [catalogName, setCatalogName] = useState('')
-	const [name, setName] = useState('')
-	const [linkURL, setLinkURL] = useState('')
+// JSON EDITOR COMPONENT
+function JSONEditor({ location }) {
+	const [page, setPage] = useState(location);
+	const [catalogName, setCatalogName] = useState('');
+	const [name, setName] = useState('');
+	const [linkURL, setLinkURL] = useState('');
 
 	// pull in realtime database
-	const { database } = useContext(FirebaseContext)
+	const { database } = useContext(FirebaseContext);
 
 	// flag checking if any of the form fields are empty
 	let isInvalid =
-		page === '' || catalogName === '' || name === '' || linkURL === ''
+		page === '' || catalogName === '' || name === '' || linkURL === '';
 
-	const handleSubmit = (event) => {
-		event.preventDefault()
+	const handleSubmit = event => {
+		event.preventDefault();
 
-		const rootRef = database.ref()
+		const rootRef = database.ref();
 		// Adding link to database
 		const newItemRef = rootRef
 			.child(`${page}/${catalogName}/catalog`)
-			.push()
+			.push();
 		newItemRef.set({
 			id: 11,
 			name: name,
 			url: linkURL,
-		})
+		});
 
 		// dry run
-		console.log(`Added ${name} - ${linkURL} to ${page}/${catalogName}`)
+		console.log(`Added ${name} - ${linkURL} to ${page}/${catalogName}`);
 
-		setPage(location)
-		setCatalogName('')
-		setName('')
-		setLinkURL('')
-	}
+		setPage(location);
+		setCatalogName('');
+		setName('');
+		setLinkURL('');
+	};
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -107,5 +108,7 @@ export default function JSONEditor({ location }) {
 				placeholder="URL"
 			/>
 		</form>
-	)
+	);
 }
+
+export default JSONEditor;

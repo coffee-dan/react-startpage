@@ -1,8 +1,7 @@
-// About page - link to repo and link to portfolio website
-// static catalog
-import React from 'react'
+import React from 'react';
 
-export default function About() {
+// ABOUT PAGE COMPONENT - link to repo and link to portfolio website
+function About() {
 	return (
 		<div className="body-container">
 			<p className="text">
@@ -37,5 +36,7 @@ export default function About() {
 				.
 			</p>
 		</div>
-	)
+	);
 }
+
+export default About;

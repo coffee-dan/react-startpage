@@ -1,16 +1,16 @@
-// Reference page - Bulk storage of more niche links
-import React, { useContext } from 'react'
-import { CatalogContainer, JSONEditor } from '../components'
-import { FirebaseContext } from '../context/firebase'
-import useAuthListener from '../hooks/use-auth-listener'
+import React, { useContext } from 'react';
 
-// displays reference catalogs
-export default function Reference() {
-	const pageName = 'reference'
+import { CatalogContainer, JSONEditor } from '../components';
+import { FirebaseContext } from '../context/firebase';
+import useAuthListener from '../hooks/use-auth-listener';
+
+// REFERENCE PAGE COMPONENT - Bulk storage of more niche links
+function Reference() {
+	const pageName = 'reference';
 	// used for signout
-	const { firebase } = useContext(FirebaseContext)
+	const { firebase } = useContext(FirebaseContext);
 	// pull in user to check if admin is logged in
-	const { user } = useAuthListener()
+	const { user } = useAuthListener();
 
 	return (
 		<div className="body-container">
@@ -22,5 +22,7 @@ export default function Reference() {
 				</>
 			) : null}
 		</div>
-	)
+	);
 }
+
+export default Reference;

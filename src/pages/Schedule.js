@@ -1,9 +1,10 @@
-// Schedule Page
-import React from 'react'
+import React from 'react';
 
 // TODO find a use for this page, preferably a calendar app as constantly
 //  changing an image like in the original startpage project is not viable
-export default function Schedule() {
+
+// SCHEDULE PAGE COMPONENT
+function Schedule() {
 	return (
 		<div className="body-container">
 			<div className="text">
@@ -11,5 +12,7 @@ export default function Schedule() {
 				schedule. May do better to contain calendar of sorts.
 			</div>
 		</div>
-	)
+	);
 }
+
+export default Schedule;

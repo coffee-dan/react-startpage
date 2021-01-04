@@ -1,8 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
-import { FirebaseContext } from './context/firebase'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './App';
+import { FirebaseContext } from './context/firebase';
+import './index.css';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -10,11 +11,11 @@ import './index.css'
 //  comment form GitHub you need to get your own firebase config details
 const firebase = window.firebase.initializeApp(
 	JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG)
-)
+);
 
-console.log(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG))
+console.log(JSON.parse(process.env.REACT_APP_FIREBASE_CONFIG));
 
-const database = firebase.database()
+const database = firebase.database();
 
 ReactDOM.render(
 	<React.StrictMode>
@@ -25,4 +26,4 @@ ReactDOM.render(
 		</FirebaseContext.Provider>
 	</React.StrictMode>,
 	document.getElementById('root')
-)
+);

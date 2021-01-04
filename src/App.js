@@ -1,12 +1,12 @@
 /* App exists as a sort of table of contents for the webpage
  * thus it should contain each of the main elements of the page */
-import React from 'react'
+import React from 'react';
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 	NavLink,
-} from 'react-router-dom'
+} from 'react-router-dom';
 import {
 	Schedule,
 	Reference,
@@ -15,8 +15,9 @@ import {
 	Notes,
 	About,
 	Admin,
-} from './pages'
+} from './pages';
 
+// APP COMPONENT
 function App() {
 	return (
 		<Router>
@@ -66,7 +67,7 @@ function App() {
 				<Route exact path="/admin" component={Admin} />
 			</Switch>
 		</Router>
-	)
+	);
 }
 
-export default App
+export default App;

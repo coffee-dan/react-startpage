@@ -1,0 +1,7 @@
+_clutter/
+.vs/
+.cache/
+package.json
+package-lock.json
+build/
+node_modules/
