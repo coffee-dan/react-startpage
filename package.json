@@ -5,20 +5,16 @@
   "main": "src/index.js",
   "homepage": "/",
   "engines": {
-    "node": ">=12.18.4"
+    "node": "12.18.4"
   },
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "chokidar": "^3.4.3",
-    "object-path": "^0.11.5",
+    "nth-check": "^2.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
-    "serve": "^11.3.2"
+    "react-scripts": "^5.0.1",
+    "serve": "^14.2.4"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -43,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.0.5"
+    "typescript": "^2.8.0",
+    "postcss-selector-parser": "^6.0.10"
   }
 }
