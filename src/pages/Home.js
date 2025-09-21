@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-
+import { useContext, useEffect, useState } from 'react';
 import { WeatherContainer, CatalogContainer, JSONEditor } from '../components';
 import { FirebaseContext } from '../context/firebase';
+import { getAuth, signOut } from 'firebase/auth'
 import useAuthListener from '../hooks/use-auth-listener';
 
 /* The use of a .env file to hide the Weather API key is only a
@@ -15,6 +15,7 @@ function Home() {
 	const [weatherLoading, setWeatherLoading] = useState(true);
 
 	const { firebase } = useContext(FirebaseContext);
+	const { authUser } = getAuth(firebase)
 
 	const { user } = useAuthListener();
 	// pageName is used as the base for constructing a location path to access the
@@ -52,7 +53,7 @@ function Home() {
 			{user && user.uid === process.env.REACT_APP_ADMIN_UID ? (
 				<>
 					<JSONEditor location={pageName} />
-					<p onClick={() => firebase.auth().signOut()}>Sign out</p>
+					<p onClick={() => signOut(authUser)}>Sign out</p>
 				</>
 			) : null}
 		</div>

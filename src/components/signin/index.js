@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-
+import { useState, useContext } from 'react';
 import { FirebaseContext } from '../../context/firebase';
 import './styles/signin.css';
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './styles/weather-container.css';
 
 /* Use data passes from App.js which in turn comes from

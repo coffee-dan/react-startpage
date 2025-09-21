@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
-
+import { useEffect, useState, useContext } from 'react';
 import { FirebaseContext } from '../../context/firebase';
 import Catalog from './catalog';
 
@@ -17,14 +16,14 @@ function CatalogContainer({ page }) {
 		// get reference to root of database
 		const rootRef = database.ref();
 
-		rootRef.orderByKey().on(
+		rootRef?.orderByKey().on(
 			'value',
 			snapshot => {
 				console.log('querying realtime database...');
 				let root = snapshot.val();
 				setRemoteBookmarks(root);
 
-				if (remoteBookmarks !== {}) {
+				if (remoteBookmarks != {}) {
 					console.log('Reference good response!');
 					setBookmarksLoading(false);
 				}
