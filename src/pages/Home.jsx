@@ -29,7 +29,7 @@ function Home() {
 		setWeatherLoading(true);
 		const APILink =
 			'https://api.openweathermap.org/data/2.5/weather?id=4691930&units=imperial&appid=' +
-			process.env.REACT_APP_WEATHER_API_KEY;
+			import.meta.env.VITE_WEATHER_API_KEY;
 		fetch(APILink)
 			.then(response => response.json())
 			.then(data => {
@@ -50,7 +50,7 @@ function Home() {
 		<div className="body-container home-page">
 			<WeatherContainer data={weatherData} loading={weatherLoading} />
 			<CatalogContainer page={pageName} />
-			{user && user.uid === process.env.REACT_APP_ADMIN_UID ? (
+			{user && user.uid === import.meta.env.VITE_ADMIN_UID ? (
 				<>
 					<JSONEditor location={pageName} />
 					<p onClick={() => signOut(authUser)}>Sign out</p>

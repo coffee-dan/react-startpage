@@ -17,7 +17,7 @@ function Admin() {
 
 	return (
 		<div className="body-container home-page">
-			{user && user.uid === process.env.REACT_APP_ADMIN_UID ? (
+			{user && user.uid === import.meta.env.VITE_ADMIN_UID ? (
 				<p onClick={() => signOut(authUser)}>Sign out</p>
 			) : (
 				<Signin />

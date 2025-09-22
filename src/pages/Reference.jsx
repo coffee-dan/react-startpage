@@ -16,7 +16,7 @@ function Reference() {
 	return (
 		<div className="body-container">
 			<CatalogContainer page={pageName} />
-			{user && user.uid === process.env.REACT_APP_ADMIN_UID ? (
+			{user && user.uid === import.meta.env.VITE_ADMIN_UID ? (
 				<>
 					<JSONEditor location={pageName} />
 					<p onClick={() => signOut(authUser)}>Sign out</p>

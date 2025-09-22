@@ -58,7 +58,7 @@ function CatalogItem({ id, item, location, catalogRef }) {
 	// can be undone
 
 	const { user } = useAuthListener();
-	const isAdmin = user && user.uid === process.env.REACT_APP_ADMIN_UID;
+	const isAdmin = user && user.uid === import.meta.env.VITE_ADMIN_UID;
 
 	const onDelete = () => {
 		if (!isAdmin) {

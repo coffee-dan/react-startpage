@@ -1,5 +1,3 @@
-import React from 'react';
-
 // TODO look into dynamically creating catalog pages
 
 // UNSORTED PAGE COMPONENT

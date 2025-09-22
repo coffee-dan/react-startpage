@@ -1,5 +1,3 @@
-import React from 'react';
-
 // TODO todo list implementation
 //      TODO level 1: simple todo facade
 //      TODO level 2a: level 1 + todo that grabs these TODO comments

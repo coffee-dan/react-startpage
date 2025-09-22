@@ -1,5 +1,3 @@
-import React from 'react';
-
 // ABOUT PAGE COMPONENT - link to repo and link to portfolio website
 function About() {
 	return (
