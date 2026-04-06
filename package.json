@@ -41,6 +41,6 @@
     "@vitejs/plugin-react-swc": "4.1.0",
     "postcss-selector-parser": "6.0.10",
     "typescript": "5.9.2",
-    "vite": "7.1.11"
+    "vite": "7.3.2"
   }
 }
